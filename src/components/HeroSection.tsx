@@ -2,6 +2,39 @@ import { motion } from "framer-motion";
 import heroBg from "@/assets/hero-bg.jpg";
 import logo from "@/assets/logo.png";
 
+const issues = [
+  {
+    title: "April 2026",
+    tagline: "Water: The Source of Life & Rejuvenation",
+    url: "https://heyzine.com/flip-book/f03b5c07d2.html",
+  },
+  {
+    title: "March 2026",
+    tagline: "Women of Substance",
+    url: "https://heyzine.com/flip-book/cedec35c24.html",
+  },
+  {
+    title: "February 2026",
+    tagline: "Mindfulness: Body, Mind, Soul",
+    url: "https://heyzine.com/flip-book/02634fdaa6.html",
+  },
+  {
+    title: "January 2026",
+    tagline: "Restore, Refresh, Rise in 2026",
+    url: "https://heyzine.com/flip-book/9d74cc1623.html",
+  },
+  {
+    title: "December 2025",
+    tagline: "Sound Healing for the Body, Mind, and Soul",
+    url: "https://heyzine.com/flip-book/07980f1a7d.html",
+  },
+  {
+    title: "November 2025",
+    tagline: "Journeys of the Body, Mind, and Soul in Harmony",
+    url: "https://heyzine.com/flip-book/bd959516ec.html",
+  },
+];
+
 export function HeroSection() {
   return (
     <section id="home" className="relative py-16 md:py-24 flex items-center justify-center overflow-hidden bg-slate-950">
