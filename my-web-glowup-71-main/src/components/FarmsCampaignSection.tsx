@@ -19,7 +19,7 @@ export function FarmsCampaignSection() {
           className="text-center mb-5"
         >
           <h2 className="section-heading text-3xl md:text-5xl">
-            FARMS: Forests Â· Air Â· Rivers Â· Mountains
+            FARMS: Forests Air Rivers Mountains
           </h2>
           <div className="gold-divider w-24 mx-auto mt-4" />
           <p className="mt-4 text-xl font-serif text-gold italic">

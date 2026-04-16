@@ -72,6 +72,7 @@
 
 @layer base {
   html {
+    font-size: 1.0625rem;
     scroll-behavior: smooth;
   }
 
@@ -98,7 +99,7 @@
 @layer components {
   .section-heading {
     font-family: var(--font-family-display);
-    color: var(--color-primary);
+    color: var(--color-deep-purple);
     font-weight: 700;
     letter-spacing: 0.02em;
   }
@@ -111,7 +112,7 @@
   }
 
   .gold-gradient-text {
-    background: linear-gradient(135deg, oklch(0.35 0.18 250), oklch(0.5 0.2 250), oklch(0.35 0.18 250));
+    background: linear-gradient(135deg, oklch(0.72 0.18 95), oklch(0.82 0.17 95), oklch(0.72 0.18 95));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -127,8 +128,8 @@
   }
 
   .btn-gold {
-    background: linear-gradient(135deg, oklch(0.45 0.2 250), oklch(0.38 0.18 250));
-    color: white;
+    background: linear-gradient(135deg, oklch(0.72 0.18 95), oklch(0.82 0.17 95), oklch(0.72 0.18 95));
+    color: oklch(0.12 0.03 100);
     font-family: var(--font-family-display);
     font-weight: 600;
     padding: 0.65rem 1.75rem;
@@ -140,14 +141,14 @@
   }
 
   .btn-gold:hover {
-    background: linear-gradient(135deg, oklch(0.5 0.2 250), oklch(0.45 0.2 250));
+    background: linear-gradient(135deg, oklch(0.82 0.17 95), oklch(0.72 0.18 95));
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px oklch(0.45 0.2 250 / 30%);
+    box-shadow: 0 8px 30px oklch(0.72 0.18 95 / 30%);
   }
 
   .btn-outline-gold {
-    border: 2px solid oklch(0.45 0.2 250);
-    color: oklch(0.45 0.2 250);
+    border: 2px solid oklch(0.72 0.18 95);
+    color: oklch(0.72 0.18 95);
     font-family: var(--font-family-display);
     font-weight: 600;
     padding: 0.65rem 1.75rem;
@@ -160,7 +161,7 @@
   }
 
   .btn-outline-gold:hover {
-    background: oklch(0.45 0.2 250 / 10%);
+    background: oklch(0.72 0.18 95 / 10%);
     transform: translateY(-2px);
   }
 

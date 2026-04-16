@@ -11,9 +11,9 @@ const themes = [
   "Mindfulness and Clarity",
   "Leadership and Ethics",
   "Creativity and Culture",
-  "Wellbeing and Balance",
-  "Inner Awareness and Purpose",
-  "Water & FARMS: Forests, Air, Rivers, and Mountains",
+  "Art & Culture",
+  "Real Passions, Real Stories, Lived Experiences!",
+  "Water & FARMS: Forests, Air, Rivers, Mountains",
 ];
 
 export function ThemesSection() {
@@ -30,7 +30,7 @@ export function ThemesSection() {
           <h2 className="section-heading text-4xl md:text-5xl">Themes in Anandda</h2>
           <div className="gold-divider w-24 mx-auto mt-4" />
           <p className="mt-4 text-xl font-serif text-foreground/80 italic">
-            Each Issue â€” A Theme. Each Theme â€” A Pathway To Balance.
+            Each Issue - A Theme. Each Theme: A Pathway To Balance & Ultimately Bliss!
           </p>
         </motion.div>
 

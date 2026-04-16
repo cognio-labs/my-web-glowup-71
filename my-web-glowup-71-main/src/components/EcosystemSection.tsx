@@ -8,11 +8,11 @@ const fadeInUp = {
 };
 
 const ecosystemItems = [
-  "The Anandda Digital Magazine â€“ thoughtfully curated themed issues",
-  "Leadership Conversations â€“ Dialogues on mindful leadership and wellbeing",
-  "A Galaxy Of Authors â€“ Experts sharing insight and reflection",
-  "Global Digital Reach â€“ Connecting professional audiences worldwide",
-  "Collaborative Partnerships â€“ Organisations contributing to the dialogue on conscious living",
+  "The Anandda Digital Magazine — thoughtfully curated themed issues",
+  "Leadership Conversations — Dialogues on mindful leadership and wellbeing",
+  "A Galaxy Of Authors — Experts sharing insight and reflection",
+  "Global Digital Reach — Connecting professional audiences worldwide",
+  "Collaborative Partnerships — Organisations contributing to the dialogue on conscious living",
 ];
 
 export function EcosystemSection() {

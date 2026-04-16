@@ -14,6 +14,7 @@ import {
   Building2,
   Mail,
 } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 type NavItem = {
   label: string;
@@ -32,6 +33,7 @@ const mainLinks: NavItem[] = [
 
 const moreLinks: NavItem[] = [
   { label: "Why Created", sectionId: "why-created", icon: Sparkles },
+  { label: "Archives", sectionId: "archives", icon: BookOpen },
   { label: "Global Reach", sectionId: "global-reach", icon: Globe },
   { label: "Readership", sectionId: "readership", icon: Users },
   { label: "Themes", sectionId: "themes", icon: Leaf },
@@ -116,7 +118,8 @@ export function Navbar() {
             type="button"
             style={{ background: "none", border: "none", cursor: "pointer" }}
           >
-            <span className="logo-text">ANANDDA</span>
+            <img src={logo} alt="Anandda logo" className="h-10 w-10 rounded-full object-cover mr-3 inline-block" />
+            <span className="logo-text">ANAN<span className="italic">D</span>DA</span>
           </button>
 
           {/* Desktop nav */}

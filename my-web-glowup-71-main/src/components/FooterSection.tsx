@@ -1,4 +1,23 @@
 ﻿import { motion } from "framer-motion";
+import { Instagram, Linkedin, Facebook, ExternalLink } from "lucide-react";
+
+const footerLinks = [
+  {
+    label: "Substack",
+    href: "https://substack.com/@ananddaofficial",
+    Icon: ExternalLink,
+  },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/ananddaofficial",
+    Icon: Instagram,
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/company/ananddabliss",
+    Icon: Linkedin,
+  },
+];
 
 export function FooterSection() {
   return (
@@ -9,7 +28,7 @@ export function FooterSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-3xl font-display gold-gradient-text font-bold">Anandda</h3>
+          <h3 className="text-3xl font-display gold-gradient-text font-bold">Anan<span className="italic">d</span>da</h3>
           <p className="mt-2 text-muted-foreground font-serif italic">
             A Confluence of Pathways to Bliss
           </p>
@@ -17,35 +36,23 @@ export function FooterSection() {
 
         <div className="gold-divider w-16 mx-auto" />
 
-        <div className="flex flex-col sm:flex-row justify-center gap-6 text-sm font-serif">
-          <a
-            href="https://substack.com/@ananddaofficial"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-foreground/70 hover:text-gold transition-colors"
-          >
-            Substack
-          </a>
-          <a
-            href="https://www.instagram.com/ananddaofficial"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-foreground/70 hover:text-gold transition-colors"
-          >
-            Instagram
-          </a>
-          <a
-            href="https://www.linkedin.com/company/ananddabliss"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-foreground/70 hover:text-gold transition-colors"
-          >
-            LinkedIn
-          </a>
+        <div className="flex flex-wrap justify-center gap-4 text-sm font-serif">
+          {footerLinks.map(({ label, href, Icon }) => (
+            <a
+              key={label}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border text-foreground/80 hover:text-primary transition-colors"
+            >
+              <Icon size={16} />
+              {label}
+            </a>
+          ))}
         </div>
 
         <p className="text-xs text-muted-foreground font-serif">
-          Â© {new Date().getFullYear()} Anandda. All rights reserved.
+          © {new Date().getFullYear()} Anandda. All rights reserved.
         </p>
       </div>
     </footer>

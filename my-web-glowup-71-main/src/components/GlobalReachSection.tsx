@@ -9,8 +9,8 @@ const fadeInUp = {
 
 const stats = [
   { number: "150+", label: "Countries" },
-  { number: "88M+", label: "Magzter Users" },
-  { number: "6+", label: "Issues Published" },
+  { number: "88M+", label: "Readers" },
+  { number: "6", label: "Issues Published" },
 ];
 
 export function GlobalReachSection() {
@@ -59,13 +59,13 @@ export function GlobalReachSection() {
           <div className="space-y-4">
             <p className="text-lg font-serif text-foreground/90 leading-relaxed">
               Since its inaugural issue in November 2025, Anandda has been distributed
-              through Magzter's global digital ecosystem, serving over 88 million users
+              through Magzter's global digital ecosystem, serving over 88 million readers
               in more than 150 countries.
             </p>
             <ul className="space-y-3 text-lg font-serif">
               {[
                 "Accessible via Apple iOS, Android, and Amazon Appstore",
-                "Smart Reading ZoneÂ® (SRZ) distribution",
+                "Smart Reading Zone® (SRZ) distribution",
                 "LinkedIn & professional communities",
                 "Digital and social media platforms",
               ].map((item) => (

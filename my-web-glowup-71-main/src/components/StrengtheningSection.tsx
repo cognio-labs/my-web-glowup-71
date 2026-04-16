@@ -19,7 +19,8 @@ export function StrengtheningSection() {
           className="text-center mb-5"
         >
           <h2 className="section-heading text-3xl md:text-5xl">
-            Strengthening Your People. Strengthening Your Organisation.
+            <span className="block">Strengthening Your People.</span>
+            <span className="block">Strengthening Your Organisation.</span>
           </h2>
           <div className="gold-divider w-24 mx-auto mt-4" />
           <p className="mt-4 text-lg font-serif text-foreground/80 font-semibold max-w-3xl mx-auto">
@@ -58,7 +59,7 @@ export function StrengtheningSection() {
               {[
                 "Leadership Clarity And Ethical Awareness",
                 "Mental Resilience In High-Performance Environments",
-                "Balanced Workâ€“Life Perspectives Across Teams",
+                "Balanced Work–Life Perspectives Across Teams",
                 "Thoughtful Conversations On Wellbeing And Leadership",
               ].map((item, i) => (
                 <motion.li

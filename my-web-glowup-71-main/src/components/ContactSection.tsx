@@ -14,7 +14,7 @@ export function ContactSection() {
     e.preventDefault();
     const subject = encodeURIComponent("Message from Anandda website");
     const body = encodeURIComponent(message);
-    window.open(`mailto:contact@anandda.life?subject=${subject}&body=${body}`, "_blank");
+    window.open(`mailto:ananddaofficial@gmail.com?subject=${subject}&body=${body}`, "_blank");
     setSubmitted(true);
     setTimeout(() => setSubmitted(false), 4000);
   };
@@ -33,7 +33,10 @@ export function ContactSection() {
           <div className="gold-divider w-24 mx-auto mt-4" />
           <p className="mt-4 text-lg font-serif text-foreground/80 italic max-w-2xl mx-auto">
             We'd love to hear from you. Whether you're a reader, a contributor, or an
-            organisation looking to collaborate â€” reach out to us.
+            organisation looking to collaborate — reach out to us.
+          </p>
+          <p className="mt-3 text-sm text-foreground/70 font-serif">
+            Email: <a href="mailto:ananddaofficial@gmail.com" className="underline text-primary">ananddaofficial@gmail.com</a>
           </p>
         </motion.div>
 
@@ -47,7 +50,7 @@ export function ContactSection() {
         >
           <div className="space-y-2">
             <label className="text-sm font-display text-gold tracking-wider uppercase">
-              Your Message
+              YOUR MESSAGE
             </label>
             <textarea
               required
@@ -60,7 +63,7 @@ export function ContactSection() {
           </div>
           <div className="text-center">
             <button type="submit" className="btn-gold min-w-[200px]">
-              {submitted ? "âœ“ Opening Mail Client..." : "Send Message"}
+              {submitted ? "✓ Opening Mail Client..." : "SEND MESSAGE"}
             </button>
           </div>
         </motion.form>
@@ -80,7 +83,7 @@ export function ContactSection() {
               rel="noopener noreferrer"
               className="btn-outline-gold text-center"
             >
-              Subscribe on Substack
+              SUBSCRIBE ON SUBSTACK
             </a>
           </div>
         </motion.div>

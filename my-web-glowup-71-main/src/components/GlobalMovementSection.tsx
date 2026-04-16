@@ -19,7 +19,8 @@ export function GlobalMovementSection() {
           className="text-center mb-5"
         >
           <h2 className="section-heading text-3xl md:text-5xl">
-            A Global Movement Towards Wellbeing And Mindfulness
+            A Global Movement Towards
+            <span className="block">Well-being & Mindfulness!</span>
           </h2>
           <div className="gold-divider w-24 mx-auto mt-4" />
           <p className="mt-4 text-lg font-serif text-foreground/80 font-semibold max-w-3xl mx-auto">
