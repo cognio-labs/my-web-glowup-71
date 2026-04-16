@@ -37,59 +37,79 @@ const issues = [
 
 export function HeroSection() {
   return (
-    <section id="home" className="relative py-16 md:py-24 flex items-center justify-center overflow-hidden bg-slate-950">
+    <section id="home" className="relative py-16 md:py-24 flex items-center justify-center overflow-hidden bg-slate-900">
       <img
         src={heroBg}
         alt=""
-        className="absolute inset-0 w-full h-full object-cover opacity-80"
+        className="absolute inset-0 w-full h-full object-cover opacity-100"
       />
       
-      {/* Deep Blue/Purple Overlay for depth */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#000814]/70 via-[#1a0f2e]/60 to-[#001d3d]/70" />
+      {/* Lighter Blue/Purple Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#001d3d]/60 via-[#1a0f2e]/40 to-[#003566]/60" />
+      <div className="absolute inset-0 bg-white/5 backdrop-blur-[2px]" />
       
-      {/* Enhanced Golden Light Flares centered on the water ripple */}
+      {/* Shimmering Golden Lines background effect */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {[...Array(5)].map((_, i) => (
+          <motion.div
+            key={`line-${i}`}
+            initial={{ x: "-100%", opacity: 0 }}
+            animate={{ x: "100%", opacity: [0, 0.4, 0] }}
+            transition={{ 
+                duration: 4 + i, 
+                repeat: Infinity, 
+                delay: i * 1.5,
+                ease: "easeInOut" 
+            }}
+            className="h-[1px] w-full bg-gradient-to-r from-transparent via-gold/50 to-transparent absolute"
+            style={{ top: `${20 + i * 15}%` }}
+          />
+        ))}
+      </div>
+
+      {/* Enhanced Golden Light Flares */}
       <motion.div 
         animate={{ 
-          opacity: [0.4, 0.7, 0.4],
-          scale: [1, 1.1, 1],
+          opacity: [0.3, 0.6, 0.3],
+          scale: [1, 1.2, 1],
         }}
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-gold/10 rounded-full blur-[120px] pointer-events-none" 
+        className="absolute bottom-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-gold/15 rounded-full blur-[100px] pointer-events-none" 
       />
 
-      {/* Floating Golden Particles */}
-      {[...Array(12)].map((_, i) => (
+      {/* Floating Sparkles */}
+      {[...Array(20)].map((_, i) => (
         <motion.div
           key={i}
-          initial={{ opacity: 0, y: 0, x: 0 }}
+          initial={{ opacity: 0, scale: 0 }}
           animate={{ 
-            opacity: [0, 0.7, 0],
-            y: [-20, -150],
-            x: i % 2 === 0 ? [0, 30] : [0, -30]
+            opacity: [0, 1, 0],
+            scale: [0, 1, 0],
+            y: [-10, -100],
           }}
           transition={{ 
-            duration: 6 + Math.random() * 6, 
+            duration: 3 + Math.random() * 4, 
             repeat: Infinity, 
-            delay: Math.random() * 6,
+            delay: Math.random() * 5,
             ease: "easeOut"
           }}
-          className="absolute w-1.5 h-1.5 bg-gold rounded-full blur-[1px] pointer-events-none"
+          className="absolute w-1 h-1 bg-gold rounded-full shadow-[0_0_8px_rgba(212,175,55,1)] pointer-events-none"
           style={{ 
             left: `${Math.random() * 100}%`, 
-            top: `${60 + Math.random() * 30}%` 
+            top: `${50 + Math.random() * 40}%` 
           }}
         />
       ))}
 
       <div className="relative z-10 text-center px-6 max-w-6xl mx-auto">
-        <div className="mb-14 flex flex-col items-center gap-6">
+        <div className="mb-10 flex flex-col items-center gap-6">
           <div className="flex flex-col md:flex-row items-center gap-6">
-            <img src={logo} alt="Anandda logo" className="h-24 w-24 md:h-32 md:w-32 rounded-full object-cover shadow-2xl border-2 border-gold/40 ring-4 ring-gold/10" />
+            <img src={logo} alt="Anandda logo" className="h-20 w-20 md:h-28 md:w-28 rounded-full object-cover shadow-2xl border-2 border-gold/40 ring-4 ring-gold/10" />
             <div className="text-center md:text-left">
-              <p className="text-2xl md:text-3xl uppercase tracking-[0.4em] text-white/95 font-bold font-display drop-shadow-xl">
+              <p className="text-xl md:text-2xl uppercase tracking-[0.4em] text-white/95 font-bold font-display drop-shadow-xl">
                 Anan<span className="italic text-gold">d</span>da
               </p>
-              <p className="text-sm md:text-base text-gold/90 uppercase tracking-[0.25em] mt-1 font-serif font-medium drop-shadow-md">
+              <p className="text-xs md:text-sm text-gold/90 uppercase tracking-[0.25em] mt-1 font-serif font-medium drop-shadow-md">
                 A Confluence of Pathways to Bliss
               </p>
             </div>
@@ -100,7 +120,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-gold via-white to-gold bg-clip-text text-transparent font-display tracking-wide drop-shadow-[0_10px_30px_rgba(212,175,55,0.3)]"
+          className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-gold via-white to-gold bg-clip-text text-transparent font-display tracking-wide drop-shadow-2xl"
         >
           Anan<span className="italic">d</span>da
         </motion.h1>
@@ -109,7 +129,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
-          className="mt-6 text-xl md:text-3xl text-gold-light font-serif italic drop-shadow-[0_4px_10px_rgba(0,0,0,0.5)]"
+          className="mt-4 text-lg md:text-2xl text-gold-light font-serif italic drop-shadow-md"
         >
           A Confluence of Pathways to Bliss
         </motion.p>
@@ -118,24 +138,22 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6 }}
-          className="mt-6 text-sm md:text-lg text-white/90 font-serif max-w-3xl mx-auto leading-relaxed drop-shadow-md"
+          className="mt-4 text-xs md:text-base text-white/90 font-serif max-w-2xl mx-auto leading-relaxed drop-shadow-md"
         >
           In a world that moves faster than ever, Anandda is your pause — a sacred
-          confluence where wisdom, art, and awareness meet. Born from the heart of
-          a seeker, it brings stories that nurture the body, illuminate the mind,
-          and awaken the soul.
+          confluence where wisdom, art, and awareness meet.
         </motion.p>
 
         <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.9 }}
-            className="mt-12 flex flex-col sm:flex-row gap-5 justify-center"
+            className="mt-8 flex flex-col sm:flex-row gap-4 justify-center"
         >
-            <a href="https://heyzine.com/flip-book/f03b5c07d2.html" target="_blank" rel="noopener noreferrer" className="btn-gold px-10 py-4 text-base shadow-xl hover:shadow-gold/20">
+            <a href="https://heyzine.com/flip-book/f03b5c07d2.html" target="_blank" rel="noopener noreferrer" className="btn-gold px-8 py-3 text-sm shadow-xl hover:shadow-gold/20">
                 READ THE LATEST ISSUE
             </a>
-            <a href="https://substack.com/@ananddaofficial" target="_blank" rel="noopener noreferrer" className="btn-outline-gold px-10 py-4 text-base border-white/40 text-white hover:border-gold hover:text-gold backdrop-blur-sm">
+            <a href="https://substack.com/@ananddaofficial" target="_blank" rel="noopener noreferrer" className="btn-outline-gold px-8 py-3 text-sm border-white/40 text-white hover:border-gold hover:text-gold backdrop-blur-sm">
                 SUBSCRIBE TO ANANDDA
             </a>
         </motion.div>
@@ -145,15 +163,15 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.2 }}
-          className="mt-32"
+          className="mt-20"
         >
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-gold tracking-wider uppercase drop-shadow-xl">OUR ARCHIVES</h2>
-          <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mt-5" />
-          <p className="mt-5 text-lg font-serif text-white/80 max-w-2xl mx-auto mb-14 drop-shadow-md">
-            Explore every issue with direct flipbook links. The latest six issues are listed here.
+          <h2 className="text-2xl md:text-3xl font-display font-bold text-gold tracking-wider uppercase drop-shadow-xl">OUR ARCHIVES</h2>
+          <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mt-3" />
+          <p className="mt-3 text-sm font-serif text-white/80 max-w-2xl mx-auto mb-10 drop-shadow-md">
+            Explore every issue with direct flipbook links.
           </p>
 
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 max-w-6xl mx-auto">
             {issues.map((issue, index) => (
               <motion.a
                 key={issue.title}
@@ -163,17 +181,17 @@ export function HeroSection() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 1.4 + index * 0.1 }}
-                className="bg-black/20 backdrop-blur-xl p-7 rounded-3xl border border-white/10 hover:border-gold/50 transition-all hover:-translate-y-2 hover:bg-black/30 group text-left shadow-lg"
+                className="bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/10 hover:border-gold/50 transition-all hover:-translate-y-1 hover:bg-white/15 group text-left shadow-lg"
               >
-                <div className="text-[10px] uppercase tracking-[0.25em] text-gold/80 font-bold group-hover:text-gold transition-colors">Issue</div>
-                <div className="mt-3 text-2xl font-bold text-white group-hover:text-gold transition-colors">
+                <div className="text-[9px] uppercase tracking-[0.2em] text-gold/80 font-bold group-hover:text-gold transition-colors">Issue</div>
+                <div className="mt-2 text-lg font-bold text-white group-hover:text-gold transition-colors leading-tight">
                   {issue.title}
                 </div>
-                <div className="mt-2 text-sm text-white/80 font-serif leading-relaxed line-clamp-2 min-h-[3rem]">
+                <div className="mt-1 text-xs text-white/70 font-serif leading-snug line-clamp-1 min-h-[1rem]">
                   {issue.tagline}
                 </div>
-                <div className="mt-6 text-xs font-bold text-gold uppercase tracking-widest flex items-center gap-2 group-hover:gap-3 transition-all">
-                  OPEN FLIPBOOK <span className="text-lg">→</span>
+                <div className="mt-4 text-[10px] font-bold text-gold uppercase tracking-widest flex items-center gap-1 group-hover:gap-2 transition-all">
+                  OPEN FLIPBOOK <span className="text-sm">→</span>
                 </div>
               </motion.a>
             ))}
