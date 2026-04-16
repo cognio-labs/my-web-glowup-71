@@ -16,12 +16,16 @@ export function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-b from-white/50 via-white/30 to-white" />
 
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-        <div className="mb-8 flex flex-col items-center gap-4">
-          <div className="flex items-center gap-4">
-            <img src={logo} alt="Anandda logo" className="h-16 w-16 rounded-full object-cover shadow-lg" />
-            <div className="text-left">
-              <p className="text-sm uppercase tracking-[0.35em] text-foreground/90 font-semibold">Anan<span className="italic">d</span>da</p>
-              <p className="text-xs text-foreground/70 uppercase tracking-[0.18em]">A Confluence of Pathways to Bliss</p>
+        <div className="mb-12 flex flex-col items-center gap-6">
+          <div className="flex flex-col md:flex-row items-center gap-6">
+            <img src={logo} alt="Anandda logo" className="h-28 w-28 md:h-36 md:w-36 rounded-full object-cover shadow-2xl border-2 border-gold/20" />
+            <div className="text-center md:text-left">
+              <p className="text-2xl md:text-3xl uppercase tracking-[0.4em] text-foreground/90 font-bold font-display">
+                Anan<span className="italic text-gold">d</span>da
+              </p>
+              <p className="text-sm md:text-base text-foreground/70 uppercase tracking-[0.25em] mt-1 font-serif">
+                A Confluence of Pathways to Bliss
+              </p>
             </div>
           </div>
         </div>
