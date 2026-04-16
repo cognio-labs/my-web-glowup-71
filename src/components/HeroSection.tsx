@@ -16,34 +16,13 @@ export function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-b from-white/50 via-white/30 to-white" />
 
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-        <div className="mb-8 flex flex-col md:flex-row items-center justify-between gap-4 text-left">
-          <div className="flex items-center gap-4 justify-center md:justify-start">
+        <div className="mb-8 flex flex-col items-center gap-4">
+          <div className="flex items-center gap-4">
             <img src={logo} alt="Anandda logo" className="h-16 w-16 rounded-full object-cover shadow-lg" />
-            <div>
+            <div className="text-left">
               <p className="text-sm uppercase tracking-[0.35em] text-foreground/90 font-semibold">Anan<span className="italic">d</span>da</p>
               <p className="text-xs text-foreground/70 uppercase tracking-[0.18em]">A Confluence of Pathways to Bliss</p>
             </div>
-          </div>
-          <div className="flex flex-wrap items-center justify-center gap-3 text-sm text-foreground/80">
-            <a href="mailto:ananddaofficial@gmail.com" className="underline hover:text-primary">ananddaofficial@gmail.com</a>
-            <span className="text-foreground/50">•</span>
-            <a
-              href="https://www.instagram.com/ananddaofficial"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline hover:text-primary"
-            >
-              Instagram
-            </a>
-            <span className="text-foreground/50">•</span>
-            <a
-              href="https://www.linkedin.com/company/ananddabliss"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline hover:text-primary"
-            >
-              LinkedIn
-            </a>
           </div>
         </div>
 

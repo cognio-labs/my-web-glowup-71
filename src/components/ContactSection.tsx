@@ -1,4 +1,4 @@
-﻿import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useState } from "react";
 
 const fadeInUp = {
@@ -35,9 +35,7 @@ export function ContactSection() {
             We'd love to hear from you. Whether you're a reader, a contributor, or an
             organisation looking to collaborate — reach out to us.
           </p>
-          <p className="mt-3 text-sm text-foreground/70 font-serif">
-            Email: <a href="mailto:ananddaofficial@gmail.com" className="underline text-primary">ananddaofficial@gmail.com</a>
-          </p>
+
         </motion.div>
 
         <motion.form

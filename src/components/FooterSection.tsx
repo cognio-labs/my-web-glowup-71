@@ -1,4 +1,4 @@
-﻿import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { Instagram, Linkedin, Facebook, ExternalLink } from "lucide-react";
 
 const footerLinks = [
@@ -6,16 +6,6 @@ const footerLinks = [
     label: "Substack",
     href: "https://substack.com/@ananddaofficial",
     Icon: ExternalLink,
-  },
-  {
-    label: "Instagram",
-    href: "https://www.instagram.com/ananddaofficial",
-    Icon: Instagram,
-  },
-  {
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/company/ananddabliss",
-    Icon: Linkedin,
   },
 ];
 
