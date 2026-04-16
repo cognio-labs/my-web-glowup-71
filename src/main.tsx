@@ -2,7 +2,6 @@ import { createRoot } from "react-dom/client";
 import "./styles.css";
 import { Navbar } from "./components/Navbar";
 import { HeroSection } from "./components/HeroSection";
-import { ArchiveSection } from "./components/ArchiveSection";
 import { AboutSection } from "./components/AboutSection";
 import { WhyCreatedSection } from "./components/WhyCreatedSection";
 import { GlobalReachSection } from "./components/GlobalReachSection";
@@ -28,7 +27,6 @@ function App() {
       <Navbar />
       <main>
         <HeroSection />
-        <ArchiveSection />
         <AboutSection />
         <WhyCreatedSection />
         <EcosystemSection />
