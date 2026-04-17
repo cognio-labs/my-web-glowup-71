@@ -32,7 +32,7 @@ const socials = [
 
 export function FooterSection() {
   return (
-    <footer className="py-8 px-6 bg-[#0a0510] text-white border-t border-gold/10">
+    <footer className="py-8 px-6 bg-white text-slate-800 border-t border-slate-100">
       <div className="max-w-5xl mx-auto text-center space-y-6">
         <motion.div
           initial={{ opacity: 0, y: 15 }}
@@ -42,7 +42,7 @@ export function FooterSection() {
           <h3 className="text-3xl md:text-4xl font-display text-gold font-bold tracking-[0.4em] uppercase">
             ANAN<span className="italic">D</span>DA
           </h3>
-          <p className="mt-2 text-gold/60 font-serif italic text-lg tracking-wide">
+          <p className="mt-2 text-slate-500 font-serif italic text-lg tracking-wide">
             A Confluence of Pathways to Bliss
           </p>
         </motion.div>
@@ -89,9 +89,9 @@ export function FooterSection() {
           </a>
         </div>
 
-        <div className="w-12 h-px bg-gold/20 mx-auto" />
+        <div className="w-12 h-px bg-slate-200 mx-auto" />
 
-        <p className="text-[9px] text-white/30 font-display tracking-[0.4em] uppercase">
+        <p className="text-[9px] text-slate-400 font-display tracking-[0.4em] uppercase">
           © 2026 Anandda. All rights reserved.
         </p>
       </div>
