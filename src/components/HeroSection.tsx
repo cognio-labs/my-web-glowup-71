@@ -171,20 +171,23 @@ export function HeroSection() {
                 transition={{ duration: 0.4, delay: 1.1 + index * 0.08 }}
                 className="group relative p-[1px] rounded-2xl bg-gradient-to-r from-gold/50 via-gold to-gold/50 hover:scale-105 transition-all duration-300 h-32 md:h-36"
               >
-                <div className="rounded-2xl bg-[#0f172a]/90 backdrop-blur-xl p-5 h-full border border-white/10 shadow-xl flex flex-row items-center justify-between relative z-10 transition-colors group-hover:bg-[#0f172a]/80 overflow-hidden">
-                  <div className="text-left">
-                    <div className="text-[10px] tracking-widest text-gold mb-1 font-display font-bold uppercase opacity-80">
+                <div className="rounded-2xl bg-gradient-to-br from-[#2a0f4a]/80 via-[#1a0f2e]/90 to-[#3d0f5e]/80 backdrop-blur-xl p-6 h-full border border-white/5 shadow-2xl flex flex-row items-center justify-between relative z-10 transition-all duration-500 group-hover:from-[#350f66]/90 group-hover:to-[#4a0f7a]/90 overflow-hidden ring-1 ring-white/5 group-hover:ring-gold/20">
+                  <div className="text-left relative z-20">
+                    <div className="text-[10px] tracking-[0.3em] text-gold/80 mb-1 font-display font-medium uppercase">
                       ISSUE
                     </div>
-                    <div className="text-base md:text-xl font-bold text-white group-hover:text-gold-light transition-colors leading-tight">
+                    <div className="text-base md:text-xl font-bold text-white group-hover:text-gold-light transition-all duration-300 leading-tight font-serif">
                       {issue.title}
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-2 text-gold font-medium text-[10px] tracking-widest uppercase bg-white/5 py-2 px-3 rounded-full border border-white/5 group-hover:bg-gold/10 transition-all">
-                    <span>FLIPBOOK</span>
-                    <span className="transform group-hover:translate-x-1 transition text-sm">→</span>
+                  <div className="flex items-center gap-3 text-gold/90 font-medium text-[10px] tracking-widest uppercase bg-gold/5 py-2.5 px-4 rounded-full border border-gold/10 group-hover:bg-gold/20 group-hover:text-gold group-hover:scale-105 transition-all duration-300 relative z-20">
+                    <span className="font-display font-bold">FLIPBOOK</span>
+                    <span className="transform group-hover:translate-x-1 transition-transform text-sm">→</span>
                   </div>
+
+                  {/* Internal Sexy Glow */}
+                  <div className="absolute -top-10 -right-10 w-32 h-32 bg-gold/5 rounded-full blur-2xl group-hover:bg-gold/15 transition-all duration-700" />
                 </div>
 
                 {/* Glow Effect */}
