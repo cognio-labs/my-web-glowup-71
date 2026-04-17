@@ -159,7 +159,7 @@ export function HeroSection() {
           <h2 className="text-xl md:text-2xl font-display font-bold text-gold/80 tracking-widest uppercase mb-2">OUR ARCHIVES</h2>
           <div className="w-12 h-0.5 bg-gold/40 mx-auto mb-10" />
 
-          <div className="grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-6 max-w-7xl mx-auto">
+          <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
             {issues.map((issue, index) => (
               <motion.a
                 key={issue.title}
@@ -169,19 +169,19 @@ export function HeroSection() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4, delay: 1.1 + index * 0.08 }}
-                className="group relative p-[1px] rounded-2xl bg-gradient-to-r from-gold/50 via-gold to-gold/50 hover:scale-105 transition-all duration-300"
+                className="group relative p-[1px] rounded-2xl bg-gradient-to-r from-gold/50 via-gold to-gold/50 hover:scale-105 transition-all duration-300 h-32 md:h-36"
               >
-                <div className="rounded-2xl bg-[#0f172a]/90 backdrop-blur-xl p-4 h-full border border-white/10 shadow-xl flex flex-col justify-between relative z-10 transition-colors group-hover:bg-[#0f172a]/80">
-                  <div>
-                    <div className="text-[10px] tracking-widest text-gold mb-2 font-display font-bold uppercase">
+                <div className="rounded-2xl bg-[#0f172a]/90 backdrop-blur-xl p-5 h-full border border-white/10 shadow-xl flex flex-row items-center justify-between relative z-10 transition-colors group-hover:bg-[#0f172a]/80 overflow-hidden">
+                  <div className="text-left">
+                    <div className="text-[10px] tracking-widest text-gold mb-1 font-display font-bold uppercase opacity-80">
                       ISSUE
                     </div>
-                    <div className="text-base font-bold text-white group-hover:text-gold-light transition-colors leading-tight">
+                    <div className="text-base md:text-xl font-bold text-white group-hover:text-gold-light transition-colors leading-tight">
                       {issue.title}
                     </div>
                   </div>
 
-                  <div className="mt-6 flex items-center justify-between text-gold font-medium group-hover:gap-3 transition-all text-[10px] tracking-widest uppercase">
+                  <div className="flex items-center gap-2 text-gold font-medium text-[10px] tracking-widest uppercase bg-white/5 py-2 px-3 rounded-full border border-white/5 group-hover:bg-gold/10 transition-all">
                     <span>FLIPBOOK</span>
                     <span className="transform group-hover:translate-x-1 transition text-sm">→</span>
                   </div>
