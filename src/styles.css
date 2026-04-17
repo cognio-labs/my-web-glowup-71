@@ -89,6 +89,10 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-family-serif);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    line-height: 1.6;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -113,11 +117,11 @@
   }
 
   .gold-gradient-text {
-    background: linear-gradient(135deg, oklch(0.55 0.16 85), oklch(0.65 0.15 85), oklch(0.55 0.16 85));
+    background: linear-gradient(135deg, #b58d3c 0%, #f7e695 50%, #b58d3c 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-clip: text;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
   }
 
   .purple-gradient-bg {
@@ -239,14 +243,15 @@ body.menu-open {
 }
 
 .logo-text {
-  font-weight: 700;
-  letter-spacing: 0.35em;
-  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.4em;
+  font-size: 1rem;
   text-transform: uppercase;
-  background: linear-gradient(120deg, var(--gold), var(--gold-light));
+  background: linear-gradient(120deg, #d4af37, #f7e695, #d4af37);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 1px rgba(0,0,0,0.2));
   color: transparent;
 }
 
