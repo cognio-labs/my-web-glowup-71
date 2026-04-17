@@ -149,85 +149,48 @@ export function HeroSection() {
             </a>
         </motion.div>
 
-        {/* Archives Section - Redesigned to Premium Glassmorphism */}
+        {/* Archives Section Inlined - More Compact and Premium */}
         <motion.div
-          initial={{ opacity: 0, y: 60 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
-          className="mt-32 relative py-20 px-4 rounded-[40px] overflow-hidden bg-gradient-to-br from-[#1d003d] to-[#001d3d] border border-white/5 shadow-2xl"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.9 }}
+          className="mt-24"
         >
-          {/* Section Sparkles */}
-          <div className="absolute inset-0 pointer-events-none">
-            {[...Array(15)].map((_, i) => (
-              <motion.div
-                key={`sparkle-${i}`}
-                animate={{ 
-                  opacity: [0, 0.4, 0],
-                  scale: [0.5, 1, 0.5],
-                  y: [0, -40] 
-                }}
-                transition={{ 
-                  duration: 2 + Math.random() * 2, 
-                  repeat: Infinity, 
-                  delay: Math.random() * 3 
-                }}
-                className="absolute w-1 h-1 bg-gold/60 rounded-full"
-                style={{ 
-                  left: `${Math.random() * 100}%`, 
-                  top: `${Math.random() * 100}%` 
-                }}
-              />
+          <h2 className="text-xl md:text-2xl font-display font-bold text-gold/80 tracking-widest uppercase mb-2">OUR ARCHIVES</h2>
+          <div className="w-12 h-0.5 bg-gold/40 mx-auto mb-10" />
+
+          <div className="grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-6 max-w-7xl mx-auto">
+            {issues.map((issue, index) => (
+              <motion.a
+                key={issue.title}
+                href={issue.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4, delay: 1.1 + index * 0.08 }}
+                className="group relative p-[1px] rounded-2xl bg-gradient-to-r from-gold/50 via-gold to-gold/50 hover:scale-105 transition-all duration-300"
+              >
+                <div className="rounded-2xl bg-[#0f172a]/90 backdrop-blur-xl p-4 h-full border border-white/10 shadow-xl flex flex-col justify-between relative z-10 transition-colors group-hover:bg-[#0f172a]/80">
+                  <div>
+                    <div className="text-[10px] tracking-widest text-gold mb-2 font-display font-bold uppercase">
+                      ISSUE
+                    </div>
+                    <div className="text-base font-bold text-white group-hover:text-gold-light transition-colors leading-tight">
+                      {issue.title}
+                    </div>
+                  </div>
+
+                  <div className="mt-6 flex items-center justify-between text-gold font-medium group-hover:gap-3 transition-all text-[10px] tracking-widest uppercase">
+                    <span>FLIPBOOK</span>
+                    <span className="transform group-hover:translate-x-1 transition text-sm">→</span>
+                  </div>
+                </div>
+
+                {/* Glow Effect */}
+                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 blur-xl bg-gradient-to-r from-gold/40 via-gold/60 to-gold/40 transition duration-500 pointer-events-none"></div>
+              </motion.a>
             ))}
-          </div>
-
-          <div className="relative z-10">
-            <h2 className="text-xl md:text-2xl font-display font-bold text-gold/90 tracking-[0.3em] uppercase mb-1 drop-shadow-lg">OUR ARCHIVES</h2>
-            <div className="w-20 h-0.5 bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-16 opacity-60" />
-
-            <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
-              {issues.map((issue, index) => (
-                <motion.a
-                  key={issue.title}
-                  href={issue.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="group relative block aspect-square rounded-[20px] bg-white/5 backdrop-blur-md border border-white/10 p-8 flex flex-col items-center justify-center text-center transition-all duration-300 hover:-translate-y-2 hover:bg-white/10 hover:border-gold/40 hover:shadow-[0_0_30px_rgba(212,175,55,0.2)] overflow-hidden"
-                >
-                  {/* Hover Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  
-                  {/* Label */}
-                  <div className="text-[11px] tracking-[0.4em] text-gold/70 mb-4 font-display font-bold uppercase transition-colors group-hover:text-gold">
-                    ISSUE
-                  </div>
-                  
-                  {/* Title */}
-                  <div className="text-2xl md:text-3xl font-bold text-white mb-8 font-serif transition-transform duration-300 group-hover:scale-110">
-                    {issue.title}
-                  </div>
-
-                  {/* CTA Button */}
-                  <div className="flex items-center gap-2 text-gold font-medium text-xs tracking-widest uppercase transition-all">
-                    <span className="border-b border-gold/30 pb-1 group-hover:border-gold">FLIPBOOK</span>
-                    <motion.span 
-                      animate={ { x: [0, 5, 0] } }
-                      transition={ { duration: 1.5, repeat: Infinity, ease: "easeInOut" } }
-                      className="text-lg"
-                    >
-                      →
-                    </motion.span>
-                  </div>
-
-                  {/* Active Card Highlight (Border glow) */}
-                  <div className="absolute inset-0 rounded-[20px] ring-1 ring-gold/0 group-hover:ring-gold/30 transition-all duration-500" />
-                </motion.a>
-              ))}
-            </div>
           </div>
         </motion.div>
       </div>
