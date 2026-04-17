@@ -44,8 +44,8 @@ export function HeroSection() {
         className="absolute inset-0 w-full h-full object-cover opacity-100"
       />
       
-      {/* Lighter Blue/Purple Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#001d3d]/60 via-[#1a0f2e]/40 to-[#003566]/60" />
+      {/* Premium Deep Purple Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#1d003d]/60 via-[#1a0f2e]/40 to-[#350066]/60" />
       <div className="absolute inset-0 bg-white/5 backdrop-blur-[2px]" />
       
       {/* Shimmering Golden Lines background effect */}
