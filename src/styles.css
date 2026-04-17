@@ -99,9 +99,12 @@
 @layer components {
   .section-heading {
     font-family: var(--font-family-display);
-    color: var(--color-deep-purple);
+    background: linear-gradient(135deg, var(--gold), var(--gold-light), var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-weight: 700;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.05em;
+    filter: drop-shadow(0 0 12px oklch(0.55 0.14 85 / 50%)) drop-shadow(0 0 4px oklch(0.55 0.14 85 / 30%));
   }
 
   .glass-card {
