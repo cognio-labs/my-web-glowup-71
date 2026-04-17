@@ -11,38 +11,40 @@ const footerLinks = [
 
 export function FooterSection() {
   return (
-    <footer className="py-6 md:py-10 px-6 bg-background border-t border-border">
-      <div className="max-w-4xl mx-auto text-center space-y-5">
+    <footer className="py-12 px-6 bg-[#0a0510] text-white border-t border-gold/10">
+      <div className="max-w-4xl mx-auto text-center space-y-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-3xl font-display gold-gradient-text font-bold">Anan<span className="italic">d</span>da</h3>
-          <p className="mt-2 text-muted-foreground font-serif italic">
+          <h3 className="text-4xl font-display text-gold font-bold tracking-widest uppercase">
+            ANAN<span className="italic">D</span>DA
+          </h3>
+          <p className="mt-3 text-gold/70 font-serif italic text-lg">
             A Confluence of Pathways to Bliss
           </p>
         </motion.div>
 
-        <div className="gold-divider w-16 mx-auto" />
-
-        <div className="flex flex-wrap justify-center gap-4 text-sm font-serif">
-          {footerLinks.map(({ label, href, Icon }) => (
-            <a
-              key={label}
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border text-foreground/80 hover:text-primary transition-colors"
-            >
-              <Icon size={16} />
-              {label}
-            </a>
-          ))}
+        <div className="flex justify-center gap-8">
+          <a href="https://substack.com/@ananddaofficial" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-white transition-all transform hover:scale-110">
+            <ExternalLink size={24} />
+            <span className="block text-[10px] mt-1 font-display">SUBSTACK</span>
+          </a>
+          <a href="https://www.instagram.com/ananddaofficial" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-white transition-all transform hover:scale-110">
+            <Instagram size={24} />
+            <span className="block text-[10px] mt-1 font-display">INSTAGRAM</span>
+          </a>
+          <a href="https://www.linkedin.com/company/ananddabliss" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-white transition-all transform hover:scale-110">
+            <Linkedin size={24} />
+            <span className="block text-[10px] mt-1 font-display">LINKEDIN</span>
+          </a>
         </div>
 
-        <p className="text-xs text-muted-foreground font-serif">
-          © {new Date().getFullYear()} Anandda. All rights reserved.
+        <div className="w-16 h-px bg-gold/30 mx-auto" />
+
+        <p className="text-[10px] text-white/40 font-display tracking-[0.3em] uppercase">
+          © 2026 Anandda. All rights reserved.
         </p>
       </div>
     </footer>

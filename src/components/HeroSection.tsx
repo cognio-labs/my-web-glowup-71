@@ -102,53 +102,31 @@ export function HeroSection() {
       ))}
 
       <div className="relative z-10 text-center px-6 max-w-6xl mx-auto">
-        <div className="mb-10 flex flex-col items-center gap-6">
-          <div className="flex flex-col md:flex-row items-center gap-6">
-            <img src={logo} alt="Anandda logo" className="h-20 w-20 md:h-28 md:w-28 rounded-full object-cover shadow-2xl border-2 border-gold/40 ring-4 ring-gold/10" />
-            <div className="text-center md:text-left">
-              <div className="flex items-center justify-between gap-4 mb-2">
-                <p className="text-xl md:text-2xl uppercase tracking-[0.4em] text-white/95 font-bold font-display drop-shadow-xl">
-                  Anan<span className="italic text-gold">d</span>da
-                </p>
-                <div className="flex items-center gap-3">
-                  <a href="https://www.instagram.com/ananddaofficial" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-white transition-colors">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.791-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.209-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                  </a>
-                  <a href="https://www.linkedin.com/company/ananddabliss" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-white transition-colors">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                  </a>
-                </div>
-              </div>
-              <p className="text-xs md:text-sm text-gold/90 uppercase tracking-[0.25em] font-serif font-medium drop-shadow-md">
-                A Confluence of Pathways to Bliss!
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-gold via-white to-gold bg-clip-text text-transparent font-display tracking-wide drop-shadow-2xl"
+        {/* Main Centered Logo and Heading */}
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+          className="mb-12 flex flex-col items-center"
         >
-          Anan<span className="italic">d</span>da
-        </motion.h1>
+          <img 
+            src={logo} 
+            alt="Anandda logo" 
+            className="h-32 w-32 md:h-48 md:w-48 rounded-full object-cover shadow-[0_0_50px_rgba(164,136,70,0.3)] border-2 border-gold/50 ring-8 ring-gold/5 mb-8" 
+          />
+          <h1 className="text-5xl md:text-8xl font-bold bg-gradient-to-b from-white via-gold-light to-gold bg-clip-text text-transparent font-display tracking-widest drop-shadow-2xl mb-4">
+            ANAN<span className="italic">D</span>DA
+          </h1>
+          <p className="text-sm md:text-xl text-gold/90 uppercase tracking-[0.4em] font-serif font-medium drop-shadow-md">
+            A Confluence of Pathways to Bliss
+          </p>
+        </motion.div>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
-          className="mt-4 text-lg md:text-2xl text-gold-light font-serif italic drop-shadow-md"
-        >
-          A Confluence of Pathways to Bliss
-        </motion.p>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.6 }}
-          className="mt-4 text-xs md:text-base text-white/90 font-serif max-w-2xl mx-auto leading-relaxed drop-shadow-md"
+          className="mt-6 text-base md:text-lg text-white/80 font-serif max-w-2xl mx-auto leading-relaxed drop-shadow-md italic"
         >
           In a world that moves faster than ever, Anandda is your pause — a sacred
           confluence where wisdom, art, and awareness meet.
@@ -157,60 +135,48 @@ export function HeroSection() {
         <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.9 }}
-            className="mt-8 flex flex-col sm:flex-row gap-4 justify-center"
+            transition={{ duration: 1, delay: 0.6 }}
+            className="mt-10 flex flex-col sm:flex-row gap-4 justify-center"
         >
-            <a href="https://heyzine.com/flip-book/f03b5c07d2.html" target="_blank" rel="noopener noreferrer" className="btn-gold px-8 py-3 text-sm shadow-xl hover:shadow-gold/20">
+            <a href="https://heyzine.com/flip-book/f03b5c07d2.html" target="_blank" rel="noopener noreferrer" className="btn-gold px-10 py-4 text-sm shadow-2xl hover:shadow-gold/30">
                 READ THE LATEST ISSUE
             </a>
-            <a href="https://www.magzter.com/IN/Anandda-Magazine/Anandda/Lifestyle/" target="_blank" rel="noopener noreferrer" className="btn-outline-gold px-8 py-3 text-sm border-white/40 text-white hover:border-gold hover:text-gold backdrop-blur-sm">
+            <a href="https://www.magzter.com/IN/Anandda-Magazine/Anandda/Lifestyle/" target="_blank" rel="noopener noreferrer" className="btn-outline-gold px-10 py-4 text-sm border-white/20 text-white hover:border-gold hover:text-gold backdrop-blur-md">
                 FOLLOW ON MAGZTER
             </a>
-            <a href="https://substack.com/@ananddaofficial" target="_blank" rel="noopener noreferrer" className="btn-outline-gold px-8 py-3 text-sm border-white/40 text-white hover:border-gold hover:text-gold backdrop-blur-sm">
+            <a href="https://substack.com/@ananddaofficial" target="_blank" rel="noopener noreferrer" className="btn-outline-gold px-10 py-4 text-sm border-white/20 text-white hover:border-gold hover:text-gold backdrop-blur-md">
                 SUBSCRIBE ON SUBSTACK
             </a>
         </motion.div>
 
-        {/* Archives Section Inlined */}
+        {/* Archives Section Inlined - More Compact and Premium */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1.2 }}
-          className="mt-20"
+          transition={{ duration: 1, delay: 0.9 }}
+          className="mt-24"
         >
-          <h2 className="text-2xl md:text-3xl font-display font-bold text-gold tracking-wider uppercase drop-shadow-xl">OUR ARCHIVES</h2>
-          <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mt-3" />
-          <p className="mt-3 text-sm font-serif text-white/80 max-w-2xl mx-auto mb-10 drop-shadow-md">
-            Explore every issue with direct flipbook links.
-          </p>
+          <h2 className="text-xl md:text-2xl font-display font-bold text-gold/80 tracking-widest uppercase mb-2">OUR ARCHIVES</h2>
+          <div className="w-12 h-0.5 bg-gold/40 mx-auto mb-10" />
 
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 max-w-6xl mx-auto">
+          <div className="grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-6 max-w-7xl mx-auto">
             {issues.map((issue, index) => (
               <motion.a
                 key={issue.title}
                 href={issue.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 1.4 + index * 0.1 }}
-                className="bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/10 hover:border-gold/50 transition-all hover:-translate-y-1 hover:bg-white/15 group text-left shadow-lg"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4, delay: 1.1 + index * 0.08 }}
+                className="bg-white/5 backdrop-blur-xl p-4 rounded-xl border border-white/10 hover:border-gold/60 transition-all hover:-translate-y-2 hover:bg-white/10 group text-left flex flex-col justify-between h-full"
               >
-                <div className="text-[9px] uppercase tracking-[0.2em] text-gold/80 font-bold group-hover:text-gold transition-colors">Issue</div>
-                <div className="mt-2 text-lg font-bold text-white group-hover:text-gold transition-colors leading-tight">
-                  {issue.title}
+                <div>
+                  <div className="text-[8px] uppercase tracking-[0.2em] text-gold/60 font-bold group-hover:text-gold transition-colors">Issue</div>
+                  <div className="mt-1 text-sm font-bold text-white group-hover:text-gold-light transition-colors leading-tight">
+                    {issue.title}
+                  </div>
                 </div>
-                <div className="mt-1 text-xs text-white/70 font-serif leading-snug line-clamp-1 min-h-[1rem]">
-                  {issue.tagline}
-                </div>
-                <div className="mt-4 text-[10px] font-bold text-gold uppercase tracking-widest flex items-center gap-1 group-hover:gap-2 transition-all">
-                  OPEN FLIPBOOK <span className="text-sm">→</span>
-                </div>
-              </motion.a>
-            ))}
-          </div>
-        </motion.div>
-      </div>
     </section>
   );
 }

@@ -41,46 +41,40 @@ const issues = [
 export function ArchiveSection() {
   return (
     <section id="archives" className="py-6 md:py-10 px-6 bg-secondary">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={fadeInUp}
-          className="text-center mb-8"
+          className="text-center mb-10"
         >
-          <h2 className="section-heading text-4xl md:text-5xl">OUR ARCHIVES</h2>
+          <h2 className="section-heading text-4xl md:text-5xl uppercase tracking-widest">OUR ARCHIVES</h2>
           <div className="gold-divider w-24 mx-auto mt-4" />
-          <p className="mt-4 text-xl font-serif text-foreground/80 leading-relaxed">
-            Explore every issue with direct flipbook links. The latest six issues are listed here, and new editions will be added as they release.
-          </p>
         </motion.div>
 
-        <div className="grid gap-6 sm:grid-cols-2">
+        <div className="grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
           {issues.map((issue, index) => (
             <motion.a
               key={issue.title}
               href={issue.url}
               target="_blank"
               rel="noopener noreferrer"
-              initial="hidden"
-              whileInView="visible"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: index * 0.05 } },
-              }}
-              className="glass-card p-6 rounded-3xl border border-primary/10 transition hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg"
+              transition={{ duration: 0.4, delay: index * 0.05 }}
+              className="bg-white/40 backdrop-blur-md p-4 rounded-xl border border-gold/10 hover:border-gold/60 transition-all hover:-translate-y-2 hover:bg-white/60 group text-left flex flex-col justify-between h-full shadow-sm"
             >
-              <div className="text-sm uppercase tracking-[0.3em] text-muted-foreground">Issue</div>
-              <div className="mt-3 text-2xl font-bold" style={{ color: "var(--deep-purple)" }}>
-                {issue.title}
+              <div>
+                <div className="text-[8px] uppercase tracking-[0.2em] text-gold/80 font-bold group-hover:text-gold transition-colors">Issue</div>
+                <div className="mt-1 text-sm font-bold text-deep-purple group-hover:text-royal-purple transition-colors leading-tight">
+                  {issue.title}
+                </div>
               </div>
-              <div className="mt-2 text-lg text-foreground/85 font-serif leading-relaxed">
-                {issue.tagline}
-              </div>
-              <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold uppercase text-primary">
-                Open Flipbook <span aria-hidden="true">→</span>
+              <div className="mt-4 text-[9px] font-bold text-gold uppercase tracking-widest flex items-center justify-between group-hover:text-gold-light transition-all">
+                <span>FLIPBOOK</span>
+                <span className="text-xs">→</span>
               </div>
             </motion.a>
           ))}

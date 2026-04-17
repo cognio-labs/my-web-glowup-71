@@ -1,4 +1,4 @@
-﻿import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 import journey1 from "@/assets/journey-1.png";
 import journey2 from "@/assets/journey-2.png";
 import journey3 from "@/assets/journey-3.png";
@@ -50,9 +50,9 @@ export function JourneySection() {
             conscious living in the professional world. It has grown into a thoughtful
             space bringing together:
           </p>
-          <ul className="flex flex-wrap justify-center gap-3">
+          <ul className="flex flex-wrap justify-center gap-4">
             {milestones.map((m) => (
-              <li key={m} className="glass-card px-4 py-2 text-sm font-serif text-gold">
+              <li key={m} className="bg-white/5 border border-gold/20 px-6 py-4 rounded-xl text-base font-serif font-semibold text-gold shadow-lg hover:border-gold/50 transition-all cursor-default">
                 {m}
               </li>
             ))}

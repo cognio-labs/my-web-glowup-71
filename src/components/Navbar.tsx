@@ -28,10 +28,10 @@ const mainLinks: NavItem[] = [
   { label: "Ecosystem", sectionId: "ecosystem", icon: Globe },
   { label: "Philosophy", sectionId: "philosophy", icon: Sparkles },
   { label: "Journey", sectionId: "journey", icon: Leaf },
-  { label: "Writers", sectionId: "writers", icon: PenTool },
 ];
 
 const moreLinks: NavItem[] = [
+  { label: "Writers", sectionId: "writers", icon: PenTool },
   { label: "Why Created", sectionId: "why-created", icon: Sparkles },
   { label: "Archives", sectionId: "archives", icon: BookOpen },
   { label: "Global Reach", sectionId: "global-reach", icon: Globe },
@@ -192,7 +192,7 @@ export function Navbar() {
         <div className="mobile-drawer">
           <div className="mobile-header">
             <span className="logo-text" style={{ fontSize: "0.9rem", letterSpacing: "0.35em" }}>
-              ANANDDA
+              ANAN<span className="italic">D</span>DA
             </span>
             <button
               className="mobile-close"
