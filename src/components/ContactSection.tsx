@@ -18,18 +18,34 @@ export function ContactSection() {
   });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const mailSubject = encodeURIComponent(`Inquiry - ${formData.firstName} ${formData.lastName}`);
-    const body = encodeURIComponent(
-      `Name: ${formData.firstName} ${formData.lastName}\n` +
-      `Email: ${formData.email}\n` +
-      `Phone: ${formData.phone}\n` +
-      `Message:\n${formData.message}`
-    );
-    window.open(`mailto:ananddaofficial@gmail.com?subject=${mailSubject}&body=${body}`, "_blank");
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 4000);
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        setFormData({ firstName: "", lastName: "", email: "", phone: "", message: "" });
+        setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        alert("Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Error sending message. Please check your connection.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -119,10 +135,11 @@ export function ContactSection() {
 
               <button
                 type="submit"
-                className="w-full py-4 rounded-xl bg-gradient-to-r from-gold via-gold-light to-gold text-white font-bold hover:scale-[1.01] transition duration-300 shadow-lg shadow-gold/20 flex items-center justify-center gap-2 mt-2"
+                disabled={isSubmitting}
+                className={`w-full py-4 rounded-xl bg-gradient-to-r from-gold via-gold-light to-gold text-white font-bold hover:scale-[1.01] transition duration-300 shadow-lg shadow-gold/20 flex items-center justify-center gap-2 mt-2 ${isSubmitting ? 'opacity-70' : ''}`}
               >
-                {submitted ? "MESSAGE SENT" : "SEND MESSAGE"}
-                <Send size={16} className={submitted ? 'opacity-0' : ''} />
+                {submitted ? "MESSAGE SENT" : (isSubmitting ? "SENDING..." : "SEND MESSAGE")}
+                {!submitted && !isSubmitting && <Send size={16} />}
               </button>
             </form>
           </div>

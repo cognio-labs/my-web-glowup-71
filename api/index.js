@@ -18,6 +18,20 @@ app.get('/api/status', (req, res) => {
     });
 });
 
+// Contact Form Endpoint
+app.post('/api/contact', (req, res) => {
+    const { firstName, lastName, email, phone, message } = req.body;
+    
+    console.log(`\x1b[33m[New Message]\x1b[0m From: ${firstName} ${lastName} (${email})`);
+    
+    // Here you would typically integrate with an email service like Resend or Nodemailer
+    // For now, we return a success status to the frontend
+    res.status(200).json({
+        success: true,
+        message: "Message received successfully! We will contact you soon."
+    });
+});
+
 // Example Data for Archives
 app.get('/api/archives', (req, res) => {
     res.json([
