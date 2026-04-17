@@ -115,6 +115,7 @@
   .gold-gradient-text {
     background: linear-gradient(135deg, oklch(0.55 0.16 85), oklch(0.65 0.15 85), oklch(0.55 0.16 85));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
@@ -244,6 +245,7 @@ body.menu-open {
   text-transform: uppercase;
   background: linear-gradient(120deg, var(--gold), var(--gold-light));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
 }
