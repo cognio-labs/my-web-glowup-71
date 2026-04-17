@@ -244,31 +244,23 @@ body.menu-open {
 
 .logo-text {
   font-weight: 800;
-  letter-spacing: 0.4em;
+  letter-spacing: 0.35em;
   font-size: 1rem;
   text-transform: uppercase;
-  background: linear-gradient(120deg, #d4af37, #f7e695, #d4af37);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 0 1px rgba(0,0,0,0.2));
-  color: transparent;
+  color: #D4AF37; /* Solid gold */
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
   transition: all 0.3s ease;
 }
 
 @media (max-width: 768px) {
   .logo-text {
-    letter-spacing: 0.1em;
-    font-size: 1.2rem;
+    letter-spacing: 0.15em;
+    font-size: 1.15rem;
     font-weight: 900;
-    background: none;
-    background-color: #E5B80B;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 1px 1px rgba(0,0,0,0.3));
-    text-rendering: geometricPrecision;
+    color: #E5B80B; /* Bright solid gold for mobile */
+    text-shadow: none; /* No shadow on mobile for maximum crispness */
     -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
 }
 
