@@ -47,53 +47,53 @@ export function FooterSection() {
           </p>
         </motion.div>
 
-        <div className="flex gap-4 md:gap-8 flex-wrap justify-center items-center">
-          {socials.map((item, i) => (
-            <motion.a
-              key={i}
-              href={item.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ delay: i * 0.1 }}
-              className="group relative w-20 h-20 md:w-24 md:h-24 rounded-2xl p-[1px] hover:scale-105 transition duration-300"
+        <div className="flex items-center justify-center gap-10">
+          <a
+            href="https://substack.com/@ananddaofficial"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group"
+          >
+            <SiSubstack className="text-2xl text-[#FF6719] hover:scale-110 hover:drop-shadow-[0_0_10px_#FF6719] transition-all duration-300 cursor-pointer" />
+            <span className="block text-[8px] mt-1 text-white/40 group-hover:text-[#FF6719] transition-colors font-display tracking-widest">SUBSTACK</span>
+          </a>
+
+          <a
+            href="https://www.instagram.com/ananddaofficial"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group"
+          >
+            <FaInstagram
+              className="text-2xl hover:scale-110 transition-all duration-300 cursor-pointer"
               style={{
-                background: item.gradient
-                  ? undefined
-                  : `linear-gradient(135deg, ${item.color}, transparent)`,
+                background: "linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
               }}
-            >
-              {/* Glow wrapper */}
-              <div
-                className={`absolute inset-0 rounded-2xl ${
-                  item.gradient ? `bg-gradient-to-br ${item.gradient}` : ""
-                } opacity-20 group-hover:opacity-40 blur-xl transition-opacity duration-500`}
-                style={{
-                  background: item.gradient ? undefined : item.color,
-                }}
-              ></div>
+            />
+            <span className="block text-[8px] mt-1 text-white/40 group-hover:text-[#dd2a7b] transition-colors font-display tracking-widest text-center">INSTAGRAM</span>
+          </a>
 
-              {/* Card Container */}
-              <div className="relative h-full rounded-2xl bg-[#0b0f1a]/95 backdrop-blur-xl border border-white/10 flex flex-col items-center justify-center transition-colors group-hover:bg-[#0b0f1a]/80">
-                {/* Icon */}
-                <div
-                  className="mb-3 transition-transform duration-300 group-hover:scale-110"
-                  style={{ color: item.color }}
-                >
-                  {item.icon}
-                </div>
+          <a
+            href="https://www.linkedin.com/company/ananddabliss"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group"
+          >
+            <FaLinkedin className="text-2xl text-[#0A66C2] hover:scale-110 hover:drop-shadow-[0_0_10px_#0A66C2] transition-all duration-300 cursor-pointer" />
+            <span className="block text-[8px] mt-1 text-white/40 group-hover:text-[#0A66C2] transition-colors font-display tracking-widest text-center">LINKEDIN</span>
+          </a>
 
-                {/* Text */}
-                <p
-                  className="text-[10px] tracking-[2px] font-bold"
-                  style={{ color: item.color }}
-                >
-                  {item.name}
-                </p>
-              </div>
-            </motion.a>
-          ))}
+          <a
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group"
+          >
+            <FaFacebookF className="text-2xl text-[#1877F2] hover:scale-110 hover:drop-shadow-[0_0_10px_#1877F2] transition-all duration-300 cursor-pointer" />
+            <span className="block text-[8px] mt-1 text-white/40 group-hover:text-[#1877F2] transition-colors font-display tracking-widest text-center">FACEBOOK</span>
+          </a>
         </div>
 
         <div className="w-16 h-px bg-gold/30 mx-auto" />
