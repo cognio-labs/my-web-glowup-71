@@ -112,12 +112,12 @@ export function HeroSection() {
           <img 
             src={logo} 
             alt="Anandda logo" 
-            className="h-32 w-32 md:h-48 md:w-48 rounded-full object-cover shadow-[0_0_50px_rgba(164,136,70,0.3)] border-2 border-gold/50 ring-8 ring-gold/5 mb-8" 
+            className="h-32 w-32 md:h-48 md:w-48 rounded-full object-cover shadow-[0_0_60px_rgba(212,175,55,0.4)] border-2 border-gold ring-8 ring-gold/5 mb-8" 
           />
-          <h1 className="text-5xl md:text-8xl font-bold bg-gradient-to-b from-white via-gold-light to-gold bg-clip-text text-transparent font-display tracking-widest drop-shadow-2xl mb-4">
+          <h1 className="text-5xl md:text-8xl font-bold bg-gradient-to-b from-white via-gold-light to-gold bg-clip-text text-transparent font-display tracking-widest mb-4 drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)] filter brightness-110">
             ANAN<span className="italic">D</span>DA
           </h1>
-          <p className="text-sm md:text-xl text-gold/90 uppercase tracking-[0.4em] font-serif font-medium drop-shadow-md">
+          <p className="text-sm md:text-xl text-gold-light uppercase tracking-[0.4em] font-serif font-medium drop-shadow-[0_4px_4px_rgba(0,0,0,0.9)]">
             A Confluence of Pathways to Bliss
           </p>
         </motion.div>
