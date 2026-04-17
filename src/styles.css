@@ -258,10 +258,17 @@ body.menu-open {
 
 @media (max-width: 768px) {
   .logo-text {
-    letter-spacing: 0.15em;
-    font-size: 1.1rem;
+    letter-spacing: 0.1em;
+    font-size: 1.2rem;
     font-weight: 900;
-    filter: drop-shadow(0 0 0.5px rgba(0,0,0,0.3));
+    background: none;
+    background-color: #E5B80B;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 1px 1px rgba(0,0,0,0.3));
+    text-rendering: geometricPrecision;
+    -webkit-font-smoothing: antialiased;
   }
 }
 
