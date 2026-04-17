@@ -55,7 +55,7 @@ export function FooterSection() {
             className="group flex flex-col items-center"
           >
             <SiSubstack className="text-xl md:text-2xl text-[#FF6719] hover:scale-110 hover:drop-shadow-[0_0_8px_#FF6719] transition-all duration-300" />
-            <span className="block text-[7px] mt-2 text-[#FF6719]/50 group-hover:text-[#FF6719] transition-colors font-display tracking-widest uppercase">SUBSTACK</span>
+            <span className="block text-[10px] mt-2 text-[#FF6719]/60 group-hover:text-[#FF6719] transition-colors font-display tracking-[0.2em] font-bold uppercase">SUBSTACK</span>
           </a>
 
           <a
@@ -65,7 +65,7 @@ export function FooterSection() {
             className="group flex flex-col items-center"
           >
             <FaInstagram className="text-xl md:text-2xl text-[#E4405F] hover:scale-110 hover:drop-shadow-[0_0_8px_#E4405F] transition-all duration-300" />
-            <span className="block text-[7px] mt-2 text-[#E4405F]/50 group-hover:text-[#E4405F] transition-colors font-display tracking-widest uppercase text-center">INSTAGRAM</span>
+            <span className="block text-[10px] mt-2 text-[#E4405F]/60 group-hover:text-[#E4405F] transition-colors font-display tracking-[0.2em] font-bold uppercase text-center">INSTAGRAM</span>
           </a>
 
           <a
@@ -75,7 +75,7 @@ export function FooterSection() {
             className="group flex flex-col items-center"
           >
             <FaLinkedin className="text-xl md:text-2xl text-[#0A66C2] hover:scale-110 hover:drop-shadow-[0_0_8px_#0A66C2] transition-all duration-300" />
-            <span className="block text-[7px] mt-2 text-[#0A66C2]/50 group-hover:text-[#0A66C2] transition-colors font-display tracking-widest text-center uppercase">LINKEDIN</span>
+            <span className="block text-[10px] mt-2 text-[#0A66C2]/60 group-hover:text-[#0A66C2] transition-colors font-display tracking-[0.2em] font-bold uppercase text-center">LINKEDIN</span>
           </a>
 
           <a
@@ -85,7 +85,7 @@ export function FooterSection() {
             className="group flex flex-col items-center"
           >
             <FaFacebookF className="text-xl md:text-2xl text-[#1877F2] hover:scale-110 hover:drop-shadow-[0_0_8px_#1877F2] transition-all duration-300" />
-            <span className="block text-[7px] mt-2 text-[#1877F2]/50 group-hover:text-[#1877F2] transition-colors font-display tracking-widest text-center uppercase">FACEBOOK</span>
+            <span className="block text-[10px] mt-2 text-[#1877F2]/60 group-hover:text-[#1877F2] transition-colors font-display tracking-[0.2em] font-bold uppercase text-center">FACEBOOK</span>
           </a>
         </div>
 
