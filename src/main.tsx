@@ -21,8 +21,6 @@ import { StrengtheningSection } from "./components/StrengtheningSection";
 import { ContactSection } from "./components/ContactSection";
 import { FooterSection } from "./components/FooterSection";
 
-import { NeonGridSection } from "./components/NeonGridSection";
-
 function App() {
   return (
     <div className="app-shell">
@@ -30,7 +28,6 @@ function App() {
       <main>
         <HeroSection />
         <AboutSection />
-        <NeonGridSection />
         <WhyCreatedSection />
         <EcosystemSection />
         <GlobalReachSection />
