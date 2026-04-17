@@ -5,26 +5,26 @@ import { SiSubstack } from "react-icons/si";
 const socials = [
   {
     name: "SUBSTACK",
-    icon: <SiSubstack className="text-3xl" />,
+    icon: <SiSubstack className="text-xl md:text-2xl" />,
     color: "#FF6719",
     href: "https://substack.com/@ananddaofficial",
   },
   {
     name: "INSTAGRAM",
-    icon: <FaInstagram className="text-3xl" />,
+    icon: <FaInstagram className="text-xl md:text-2xl" />,
     gradient: "from-pink-500 via-purple-500 to-orange-400",
     color: "#E4405F",
     href: "https://www.instagram.com/ananddaofficial",
   },
   {
     name: "LINKEDIN",
-    icon: <FaLinkedin className="text-3xl" />,
+    icon: <FaLinkedin className="text-xl md:text-2xl" />,
     color: "#0A66C2",
     href: "https://www.linkedin.com/company/ananddabliss",
   },
   {
     name: "FACEBOOK",
-    icon: <FaFacebookF className="text-3xl" />,
+    icon: <FaFacebookF className="text-xl md:text-2xl" />,
     color: "#1877F2",
     href: "#",
   },
@@ -57,7 +57,7 @@ export function FooterSection() {
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: i * 0.1 }}
-              className="group relative w-32 h-32 md:w-36 md:h-36 rounded-2xl p-[1px] hover:scale-105 transition duration-300"
+              className="group relative w-20 h-20 md:w-24 md:h-24 rounded-2xl p-[1px] hover:scale-105 transition duration-300"
               style={{
                 background: item.gradient
                   ? undefined
