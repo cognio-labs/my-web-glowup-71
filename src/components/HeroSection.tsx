@@ -177,9 +177,15 @@ export function HeroSection() {
                     {issue.title}
                   </div>
                 </div>
+                <div className="mt-4 text-[9px] font-bold text-gold/70 uppercase tracking-widest flex items-center justify-between group-hover:text-gold transition-all">
+                  <span>FLIPBOOK</span>
+                  <span className="text-xs">→</span>
+                </div>
+              </motion.a>
+            ))}
+          </div>
+        </motion.div>
+      </div>
     </section>
   );
 }
-
-
-
