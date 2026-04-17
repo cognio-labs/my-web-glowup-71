@@ -64,14 +64,16 @@ export function FooterSection() {
             rel="noopener noreferrer"
             className="group"
           >
-            <FaInstagram
-              className="text-2xl hover:scale-110 transition-all duration-300 cursor-pointer"
-              style={{
-                background: "linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-              }}
-            />
+            <div className="hover:scale-110 transition-all duration-300 cursor-pointer">
+              <FaInstagram
+                className="text-2xl hover:drop-shadow-[0_0_10px_#dd2a7b]"
+                style={{
+                  background: "linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                }}
+              />
+            </div>
             <span className="block text-[8px] mt-1 text-white/40 group-hover:text-[#dd2a7b] transition-colors font-display tracking-widest text-center">INSTAGRAM</span>
           </a>
 
