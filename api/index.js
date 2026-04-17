@@ -30,7 +30,13 @@ app.get('/api/archives', (req, res) => {
     ]);
 });
 
-app.listen(PORT, () => {
-    console.log(`\x1b[35m[Sexy Backend]\x1b[0m Server is running on http://localhost:${PORT}`);
-    console.log(`\x1b[33m[Anandda]\x1b[0m Ready to serve the confluence of wisdom.`);
-});
+// Export for Vercel
+module.exports = app;
+
+// Local development listener
+if (require.main === module) {
+    app.listen(PORT, () => {
+        console.log(`\x1b[35m[Sexy Backend]\x1b[0m Server is running on http://localhost:${PORT}`);
+        console.log(`\x1b[33m[Anandda]\x1b[0m Ready to serve the confluence of wisdom.`);
+    });
+}
