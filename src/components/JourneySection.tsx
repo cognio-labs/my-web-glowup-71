@@ -52,7 +52,7 @@ export function JourneySection() {
           </p>
           <ul className="flex flex-wrap justify-center gap-4">
             {milestones.map((m) => (
-              <li key={m} className="bg-white/5 border border-gold/20 px-6 py-4 rounded-xl text-base font-serif font-semibold text-gold shadow-lg hover:border-gold/50 transition-all cursor-default">
+              <li key={m} className="bg-white border border-gold/20 px-6 py-4 rounded-xl text-base font-serif font-semibold text-gold shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:bg-[#2a0f4a] hover:text-gold-light hover:border-gold/60 hover:shadow-[0_8px_30px_rgba(212,175,55,0.25)] hover:scale-105 transition-all duration-300 cursor-default">
                 {m}
               </li>
             ))}
