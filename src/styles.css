@@ -505,25 +505,25 @@ body.menu-open {
     width: 100%;
   }
 
-  /* Global Spacing Enhancement */
+  /* Global Spacing Enhancement - High Breathing Room */
   section {
-    padding-top: 4rem !important;
-    padding-bottom: 4rem !important;
+    padding-top: 7rem !important;
+    padding-bottom: 7rem !important;
   }
   
   @media (min-width: 768px) {
     section {
-      padding-top: 6rem !important;
-      padding-bottom: 6rem !important;
+      padding-top: 10rem !important;
+      padding-bottom: 10rem !important;
     }
   }
 
   .section-heading {
-    margin-bottom: 3rem !important;
+    margin-bottom: 5rem !important;
   }
 
   .gold-divider {
-    margin-bottom: 3rem;
+    margin-bottom: 5rem;
   }
 }
 
