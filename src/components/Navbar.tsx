@@ -118,7 +118,7 @@ export function Navbar() {
             type="button"
             style={{ background: "none", border: "none", cursor: "pointer" }}
           >
-            <img src={logo} alt="Anandda logo" className="h-10 w-10 rounded-full object-cover mr-3 inline-block" />
+            <img src={logo} alt="Anandda logo" className="h-12 w-12 rounded-full object-cover mr-3 inline-block shadow-md" />
             <span className="logo-text">ANAN<span className="italic">D</span>DA</span>
           </button>
 
