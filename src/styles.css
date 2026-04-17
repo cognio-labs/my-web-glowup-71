@@ -103,7 +103,8 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 700;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.1em;
+    margin-bottom: 2rem;
   }
 
   .glass-card {
@@ -504,5 +505,26 @@ body.menu-open {
 
   .mobile-drawer {
     width: 100%;
+  }
+
+  /* Global Spacing Enhancement */
+  section {
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
+  }
+  
+  @media (min-width: 768px) {
+    section {
+      padding-top: 8rem !important;
+      padding-bottom: 8rem !important;
+    }
+  }
+
+  .section-heading {
+    margin-bottom: 3rem !important;
+  }
+
+  .gold-divider {
+    margin-bottom: 3rem;
   }
 }
