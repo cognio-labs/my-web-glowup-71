@@ -99,9 +99,7 @@
 @layer components {
   .section-heading {
     font-family: var(--font-family-display);
-    background: linear-gradient(135deg, var(--gold), var(--gold-light), var(--gold));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--color-deep-purple);
     font-weight: 700;
     letter-spacing: 0.1em;
     margin-bottom: 2rem;
