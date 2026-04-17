@@ -74,7 +74,7 @@ export function HeroSection() {
           scale: [1, 1.2, 1],
         }}
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-gold/15 rounded-full blur-[100px] pointer-events-none" 
+        className="absolute bottom-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-yellow-400/15 rounded-full blur-[100px] pointer-events-none" 
       />
 
       {/* Floating Sparkles */}
@@ -93,7 +93,7 @@ export function HeroSection() {
             delay: Math.random() * 5,
             ease: "easeOut"
           }}
-          className="absolute w-1 h-1 bg-gold rounded-full shadow-[0_0_8px_rgba(212,175,55,1)] pointer-events-none"
+          className="absolute w-1 h-1 bg-yellow-400 rounded-full shadow-[0_0_8px_rgba(255,255,0,1)] pointer-events-none"
           style={{ 
             left: `${Math.random() * 100}%`, 
             top: `${50 + Math.random() * 40}%` 
@@ -112,7 +112,7 @@ export function HeroSection() {
           <img 
             src={logo} 
             alt="Anandda logo" 
-            className="h-32 w-32 md:h-48 md:w-48 rounded-full object-cover shadow-[0_0_50px_rgba(164,136,70,0.3)] border-2 border-gold/50 ring-8 ring-gold/5 mb-8" 
+            className="h-32 w-32 md:h-48 md:w-48 rounded-full object-cover shadow-[0_0_50px_rgba(255,255,0,0.3)] border-2 border-gold/50 ring-8 ring-gold/5 mb-8" 
           />
           <h1 className="text-5xl md:text-8xl font-bold bg-gradient-to-b from-white via-gold-light to-gold bg-clip-text text-transparent font-display tracking-widest drop-shadow-2xl mb-4">
             ANAN<span className="italic">D</span>DA
