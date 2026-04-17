@@ -40,25 +40,34 @@ export function ContactSection() {
 
   return (
     <section id="contact" className="py-20 px-6 bg-[#0a0510]">
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-4xl mx-auto">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={fadeInUp}
+          className="text-center mb-16"
+        >
+          <h2 className="section-heading text-4xl md:text-5xl uppercase tracking-wider text-white">Get In Touch</h2>
+          <div className="gold-divider w-24 mx-auto mt-6" />
+          <p className="mt-8 text-2xl font-serif text-foreground/80 italic max-w-2xl mx-auto">
+            We'd love to hear from you. For collaborations, contributions, or inquiries:
+          </p>
+        </motion.div>
+
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeInUp}
-          className="mb-12"
+          className="max-w-3xl mx-auto"
         >
-          <h2 className="text-3xl font-display font-bold text-white mb-2">Send us a message</h2>
-        </motion.div>
+          <h3 className="text-xl font-display font-bold text-white mb-8">Send us a message</h3>
 
-        <motion.form
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInUp}
-          onSubmit={handleSubmit}
-          className="space-y-6"
-        >
+          <form
+            onSubmit={handleSubmit}
+            className="space-y-6"
+          >
           <div className="grid md:grid-cols-2 gap-6">
             <div className="space-y-2">
               <label className="text-sm font-medium text-white/90">First Name</label>
