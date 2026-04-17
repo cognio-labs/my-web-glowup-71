@@ -39,6 +39,10 @@ export function FooterSection() {
             <Linkedin size={24} />
             <span className="block text-[10px] mt-1 font-display">LINKEDIN</span>
           </a>
+          <a href="#" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-white transition-all transform hover:scale-110">
+            <Facebook size={24} />
+            <span className="block text-[10px] mt-1 font-display">FACEBOOK</span>
+          </a>
         </div>
 
         <div className="w-16 h-px bg-gold/30 mx-auto" />
