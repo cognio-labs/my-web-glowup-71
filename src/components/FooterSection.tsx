@@ -27,20 +27,20 @@ export function FooterSection() {
         </motion.div>
 
         <div className="flex justify-center gap-8">
-          <a href="https://substack.com/@ananddaofficial" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-white transition-all transform hover:scale-110">
-            <ExternalLink size={24} />
+          <a href="https://substack.com/@ananddaofficial" target="_blank" rel="noopener noreferrer" className="text-[#FF6719] hover:brightness-125 transition-all transform hover:scale-110">
+            <ExternalLink size={24} className="mx-auto" />
             <span className="block text-[10px] mt-1 font-display">SUBSTACK</span>
           </a>
-          <a href="https://www.instagram.com/ananddaofficial" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-white transition-all transform hover:scale-110">
-            <Instagram size={24} />
+          <a href="https://www.instagram.com/ananddaofficial" target="_blank" rel="noopener noreferrer" className="text-[#E4405F] hover:brightness-125 transition-all transform hover:scale-110">
+            <Instagram size={24} className="mx-auto" />
             <span className="block text-[10px] mt-1 font-display">INSTAGRAM</span>
           </a>
-          <a href="https://www.linkedin.com/company/ananddabliss" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-white transition-all transform hover:scale-110">
-            <Linkedin size={24} />
+          <a href="https://www.linkedin.com/company/ananddabliss" target="_blank" rel="noopener noreferrer" className="text-[#0077B5] hover:brightness-125 transition-all transform hover:scale-110">
+            <Linkedin size={24} className="mx-auto" />
             <span className="block text-[10px] mt-1 font-display">LINKEDIN</span>
           </a>
-          <a href="#" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-white transition-all transform hover:scale-110">
-            <Facebook size={24} />
+          <a href="#" target="_blank" rel="noopener noreferrer" className="text-[#1877F2] hover:brightness-125 transition-all transform hover:scale-110">
+            <Facebook size={24} className="mx-auto" />
             <span className="block text-[10px] mt-1 font-display">FACEBOOK</span>
           </a>
         </div>
