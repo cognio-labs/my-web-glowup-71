@@ -526,3 +526,66 @@ body.menu-open {
     margin-bottom: 3rem;
   }
 }
+
+/* Neumorphism Design System */
+.neumorphic-card {
+  background: #2b2b3c;
+  border-radius: 20px;
+  padding: 25px;
+  text-align: center;
+  color: white;
+  box-shadow: 
+    8px 8px 16px #1a1a2e,
+    -8px -8px 16px #3a3a5a;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.neumorphic-card:hover {
+  box-shadow: 
+    inset 6px 6px 12px #1a1a2e,
+    inset -6px -6px 12px #3a3a5a;
+  transform: scale(0.98);
+}
+
+.neumorphic-btn {
+  background: #2b2b3c !important;
+  border-radius: 30px !important;
+  padding: 12px 30px !important;
+  color: white !important;
+  box-shadow: 
+    6px 6px 12px #1a1a2e,
+    -6px -6px 12px #3a3a5a !important;
+  border: none !important;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  font-family: var(--font-family-display);
+}
+
+.neumorphic-btn:hover {
+  box-shadow: 
+    inset 4px 4px 8px #1a1a2e,
+    inset -4px -4px 8px #3a3a5a !important;
+  transform: translateY(1px);
+}
+
+.archive-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 1024px) {
+  .archive-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .archive-container {
+    grid-template-columns: 1fr;
+  }
+}
+
