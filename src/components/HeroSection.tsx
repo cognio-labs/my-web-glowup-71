@@ -169,18 +169,26 @@ export function HeroSection() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4, delay: 1.1 + index * 0.08 }}
-                className="bg-white/5 backdrop-blur-xl p-4 rounded-xl border border-white/10 hover:border-gold/60 transition-all hover:-translate-y-2 hover:bg-white/10 group text-left flex flex-col justify-between h-full"
+                className="group relative p-[1px] rounded-2xl bg-gradient-to-r from-gold/50 via-gold to-gold/50 hover:scale-105 transition-all duration-300"
               >
-                <div>
-                  <div className="text-[8px] uppercase tracking-[0.2em] text-gold/60 font-bold group-hover:text-gold transition-colors">Issue</div>
-                  <div className="mt-1 text-sm font-bold text-white group-hover:text-gold-light transition-colors leading-tight">
-                    {issue.title}
+                <div className="rounded-2xl bg-[#0f172a]/90 backdrop-blur-xl p-4 h-full border border-white/10 shadow-xl flex flex-col justify-between relative z-10 transition-colors group-hover:bg-[#0f172a]/80">
+                  <div>
+                    <div className="text-[10px] tracking-widest text-gold mb-2 font-display font-bold uppercase">
+                      ISSUE
+                    </div>
+                    <div className="text-base font-bold text-white group-hover:text-gold-light transition-colors leading-tight">
+                      {issue.title}
+                    </div>
+                  </div>
+
+                  <div className="mt-6 flex items-center justify-between text-gold font-medium group-hover:gap-3 transition-all text-[10px] tracking-widest uppercase">
+                    <span>FLIPBOOK</span>
+                    <span className="transform group-hover:translate-x-1 transition text-sm">→</span>
                   </div>
                 </div>
-                <div className="mt-4 text-[9px] font-bold text-gold/70 uppercase tracking-widest flex items-center justify-between group-hover:text-gold transition-all">
-                  <span>FLIPBOOK</span>
-                  <span className="text-xs">→</span>
-                </div>
+
+                {/* Glow Effect */}
+                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 blur-xl bg-gradient-to-r from-gold/40 via-gold/60 to-gold/40 transition duration-500 pointer-events-none"></div>
               </motion.a>
             ))}
           </div>

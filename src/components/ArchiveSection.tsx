@@ -53,7 +53,7 @@ export function ArchiveSection() {
           <div className="gold-divider w-24 mx-auto mt-4" />
         </motion.div>
 
-        <div className="grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
+        <div className="grid gap-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
           {issues.map((issue, index) => (
             <motion.a
               key={issue.title}
@@ -64,18 +64,26 @@ export function ArchiveSection() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.05 }}
-              className="bg-white/40 backdrop-blur-md p-4 rounded-xl border border-gold/10 hover:border-gold/60 transition-all hover:-translate-y-2 hover:bg-white/60 group text-left flex flex-col justify-between h-full shadow-sm"
+              className="group relative p-[1px] rounded-2xl bg-gradient-to-r from-gold/50 via-gold to-gold/50 hover:scale-105 transition-all duration-300"
             >
-              <div>
-                <div className="text-[8px] uppercase tracking-[0.2em] text-gold/80 font-bold group-hover:text-gold transition-colors">Issue</div>
-                <div className="mt-1 text-sm font-bold text-deep-purple group-hover:text-royal-purple transition-colors leading-tight">
-                  {issue.title}
+              <div className="rounded-2xl bg-[#0f172a]/90 backdrop-blur-xl p-4 h-full border border-white/10 shadow-xl flex flex-col justify-between relative z-10 transition-colors group-hover:bg-[#0f172a]/80">
+                <div>
+                  <div className="text-[10px] tracking-widest text-gold mb-2 font-display font-bold uppercase">
+                    ISSUE
+                  </div>
+                  <div className="text-sm font-bold text-white group-hover:text-gold-light transition-colors leading-tight">
+                    {issue.title}
+                  </div>
+                </div>
+
+                <div className="mt-6 flex items-center justify-between text-gold font-medium group-hover:gap-3 transition-all text-[10px] tracking-widest uppercase">
+                  <span>FLIPBOOK</span>
+                  <span className="transform group-hover:translate-x-1 transition text-sm">→</span>
                 </div>
               </div>
-              <div className="mt-4 text-[9px] font-bold text-gold uppercase tracking-widest flex items-center justify-between group-hover:text-gold-light transition-all">
-                <span>FLIPBOOK</span>
-                <span className="text-xs">→</span>
-              </div>
+
+              {/* Glow Effect */}
+              <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 blur-xl bg-gradient-to-r from-gold/40 via-gold/60 to-gold/40 transition duration-500 pointer-events-none"></div>
             </motion.a>
           ))}
         </div>
