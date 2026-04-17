@@ -241,7 +241,7 @@ body.menu-open {
   letter-spacing: 0.35em;
   font-size: 0.95rem;
   text-transform: uppercase;
-  background: linear-gradient(120deg, var(--deep-purple), var(--royal-purple));
+  background: linear-gradient(120deg, var(--gold), var(--gold-light));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
