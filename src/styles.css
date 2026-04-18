@@ -791,3 +791,51 @@ main section:not(#home) input:focus {
   outline: none;
   box-shadow: 0 0 0 3px rgba(236, 160, 176, 0.18);
 }
+/* Anandda palette fixes (force legacy light sections to match) */
+@layer components {
+  /* any section that still has Tailwind bg-white/bg-slate-* etc */
+  main section:not(#home)[class*="bg-"] {
+    background-color: transparent !important;
+  }
+
+  main section:not(#home) [class*="bg-white"],
+  main section:not(#home) [class*="bg-slate"],
+  main section:not(#home) [class*="bg-gray"],
+  main section:not(#home) [class*="bg-neutral"] {
+    background-color: rgba(236, 223, 210, 0.06) !important;
+    border-color: rgba(236, 223, 210, 0.14) !important;
+  }
+
+  main section:not(#home) [class*="text-slate"],
+  main section:not(#home) [class*="text-gray"],
+  main section:not(#home) [class*="text-neutral"],
+  main section:not(#home) [class*="text-black"] {
+    color: rgba(236, 223, 210, 0.80) !important;
+  }
+
+  main section:not(#home) .section-heading {
+    color: rgba(236, 223, 210, 0.96) !important;
+  }
+
+  main section:not(#home) h3,
+  main section:not(#home) h4 {
+    color: rgba(236, 223, 210, 0.92) !important;
+  }
+
+  /* Contact form fields */
+  main section:not(#home) input,
+  main section:not(#home) textarea {
+    background: rgba(236, 223, 210, 0.08) !important;
+    border-color: rgba(236, 223, 210, 0.18) !important;
+    color: rgba(236, 223, 210, 0.92) !important;
+  }
+
+  main section:not(#home) input::placeholder,
+  main section:not(#home) textarea::placeholder {
+    color: rgba(236, 223, 210, 0.55) !important;
+  }
+
+  main section:not(#home) button {
+    filter: saturate(1.05);
+  }
+}
