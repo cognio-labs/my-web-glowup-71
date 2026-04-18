@@ -1,129 +1,111 @@
 import { motion } from "framer-motion";
 
-const fadeInUp = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
-};
-
 const issues = [
-  {
-    title: "April 2026",
-    tagline: "Water: The Source of Life & Rejuvenation",
-    url: "https://heyzine.com/flip-book/f03b5c07d2.html",
-  },
-  {
-    title: "March 2026",
-    tagline: "Women of Substance",
-    url: "https://heyzine.com/flip-book/cedec35c24.html",
-  },
-  {
-    title: "February 2026",
-    tagline: "Mindfulness: Body, Mind, Soul",
-    url: "https://heyzine.com/flip-book/02634fdaa6.html",
-  },
-  {
-    title: "January 2026",
-    tagline: "Restore, Refresh, Rise in 2026",
-    url: "https://heyzine.com/flip-book/9d74cc1623.html",
-  },
-  {
-    title: "December 2025",
-    tagline: "Sound Healing for the Body, Mind, and Soul",
-    url: "https://heyzine.com/flip-book/07980f1a7d.html",
-  },
-  {
-    title: "November 2025",
-    tagline: "Journeys of the Body, Mind, and Soul in Harmony",
-    url: "https://heyzine.com/flip-book/bd959516ec.html",
-  },
+  { title: "April 2026", url: "https://heyzine.com/flip-book/f03b5c07d2.html" },
+  { title: "March 2026", url: "https://heyzine.com/flip-book/cedec35c24.html" },
+  { title: "February 2026", url: "https://heyzine.com/flip-book/02634fdaa6.html" },
+  { title: "January 2026", url: "https://heyzine.com/flip-book/9d74cc1623.html" },
+  { title: "December 2025", url: "https://heyzine.com/flip-book/07980f1a7d.html" },
+  { title: "November 2025", url: "https://heyzine.com/flip-book/bd959516ec.html" },
 ];
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 28 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
+};
 
 export function ArchiveSection() {
   return (
-    <section id="archives" className="relative py-12 md:py-16 px-6 overflow-hidden bg-[#0a001a]">
-      {/* Mystical Background Elements */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-deep-purple/20 rounded-full blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-gold/5 rounded-full blur-[120px] pointer-events-none" />
+    <section
+      id="archives"
+      className="relative isolate overflow-hidden bg-[#070014] px-6 py-14 md:py-20"
+    >
+      {/* Mystical background */}
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute -top-24 left-1/2 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle_at_center,rgba(210,170,65,0.20),rgba(210,170,65,0)_62%)] blur-2xl" />
+        <div className="absolute -left-24 top-1/3 h-[620px] w-[620px] rounded-full bg-[radial-gradient(circle_at_center,rgba(120,60,220,0.28),rgba(120,60,220,0)_60%)] blur-3xl" />
+        <div className="absolute -right-40 bottom-[-120px] h-[680px] w-[680px] rounded-full bg-[radial-gradient(circle_at_center,rgba(210,170,65,0.10),rgba(210,170,65,0)_66%)] blur-3xl" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.06),transparent_50%)]" />
       </div>
 
-      {/* Floating Particles Effect */}
-      {[...Array(15)].map((_, i) => (
-        <motion.div
-          key={`particle-${i}`}
-          animate={{
-            y: [0, -100],
-            opacity: [0, 0.6, 0],
-            scale: [0, 1, 0]
-          }}
-          transition={{
-            duration: 5 + Math.random() * 5,
-            repeat: Infinity,
-            delay: Math.random() * 5,
-            ease: "linear"
-          }}
-          className="absolute w-1 h-1 bg-gold/40 rounded-full blur-[1px] pointer-events-none z-0"
-          style={{
-            left: `${Math.random() * 100}%`,
-            top: `${80 + Math.random() * 20}%`
-          }}
-        />
-      ))}
+      {/* Subtle glowing particles */}
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        {Array.from({ length: 18 }).map((_, i) => {
+          const left = `${Math.random() * 100}%`;
+          const top = `${Math.random() * 100}%`;
+          const duration = 7 + Math.random() * 6;
+          const delay = Math.random() * 4;
+          const size = 1 + Math.random() * 2;
 
-      <div className="relative z-10 max-w-6xl mx-auto">
+          return (
+            <motion.div
+              // eslint-disable-next-line react/no-array-index-key
+              key={i}
+              className="absolute rounded-full bg-[rgba(210,170,65,0.55)] blur-[1px]"
+              style={{ left, top, width: size, height: size }}
+              animate={{ y: [0, -120], opacity: [0, 0.55, 0], scale: [0.8, 1.1, 0.9] }}
+              transition={{ duration, delay, repeat: Infinity, ease: "linear" }}
+            />
+          );
+        })}
+      </div>
+
+      <div className="mx-auto max-w-6xl">
         <motion.div
+          className="mx-auto mb-10 max-w-3xl text-center"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: "-80px" }}
           variants={fadeInUp}
-          className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-5xl font-display font-bold text-gold-light tracking-[0.3em] uppercase mb-4 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] filter brightness-110">OUR ARCHIVES</h2>
-          <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mt-4" />
-          <p className="mt-6 text-slate-400 font-serif italic text-lg max-w-2xl mx-auto">
-            Explore our collection of past issues, each a unique journey through wisdom and art.
+          <h2 className="font-display text-3xl font-bold tracking-[0.28em] text-[rgba(235,205,120,0.95)] drop-shadow-[0_10px_30px_rgba(210,170,65,0.15)] md:text-5xl">
+            OUR ARCHIVES
+          </h2>
+          <div className="mx-auto mt-5 h-px w-28 bg-gradient-to-r from-transparent via-[rgba(210,170,65,0.80)] to-transparent" />
+          <p className="mt-6 font-serif text-base italic text-white/70 md:text-lg">
+            A curated library of past issues—crafted with calm luxury, spiritual depth, and timeless design.
           </p>
         </motion.div>
 
-        <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-7 md:grid-cols-2 lg:grid-cols-3">
           {issues.map((issue, index) => (
             <motion.a
               key={issue.title}
               href={issue.url}
               target="_blank"
               rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative"
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.55, delay: index * 0.06, ease: "easeOut" }}
+              className="group relative block"
             >
-              {/* Outer Glow on Hover */}
-              <div className="absolute -inset-1 rounded-[22px] bg-gradient-to-r from-gold/0 via-gold/40 to-gold/0 opacity-0 group-hover:opacity-100 blur-xl transition-all duration-500" />
-              
-              <div className="relative h-44 md:h-48 rounded-[20px] bg-gradient-to-br from-[#2a0f4a]/60 via-[#1a0f2e]/80 to-[#3d0f5e]/60 backdrop-blur-xl border border-white/10 p-7 flex flex-row items-center justify-between transition-all duration-500 group-hover:-translate-y-2 group-hover:scale-[1.03] group-hover:border-gold/30 shadow-2xl overflow-hidden">
-                {/* Subtle Inner Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-gold/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                
-                <div className="relative z-10 flex flex-col justify-center text-left">
-                  <span className="text-[10px] md:text-[11px] font-display font-bold tracking-[0.4em] text-white/40 uppercase mb-3">
-                    ISSUE
-                  </span>
-                  <h3 className="text-xl md:text-2xl font-display font-extrabold text-white group-hover:text-gold-light transition-all duration-300 leading-tight">
-                    {issue.title}
-                  </h3>
-                  <div className="mt-2 w-8 h-[1px] bg-gold/30 group-hover:w-16 transition-all duration-500" />
-                </div>
+              {/* Golden glow ring (stronger on hover) */}
+              <div className="absolute -inset-[1px] rounded-[22px] bg-[radial-gradient(circle_at_20%_0%,rgba(210,170,65,0.55),rgba(210,170,65,0)_55%)] opacity-30 blur-xl transition duration-300 ease-out group-hover:opacity-80" />
 
-                <div className="relative z-10">
-                  <div className="flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-gold-light font-display font-bold text-[10px] tracking-widest uppercase transition-all duration-300 group-hover:bg-gold group-hover:text-black group-hover:border-gold group-hover:scale-105 shadow-lg">
-                    <span>FLIPBOOK</span>
-                    <span className="text-lg leading-none transition-transform duration-300 group-hover:translate-x-1">â†’</span>
+              <div className="relative overflow-hidden rounded-[20px] border border-white/10 bg-[linear-gradient(135deg,rgba(50,18,90,0.55),rgba(12,8,24,0.70))] p-7 shadow-[0_18px_50px_rgba(0,0,0,0.55)] backdrop-blur-xl transition duration-300 ease-out group-hover:-translate-y-2 group-hover:scale-[1.03] group-hover:border-[rgba(210,170,65,0.35)]">
+                {/* Inner sheen */}
+                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.10),transparent_55%)] opacity-70" />
+                <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(120deg,transparent,rgba(210,170,65,0.10),transparent)] opacity-0 transition duration-300 ease-out group-hover:opacity-100" />
+
+                <div className="relative z-10 flex items-center justify-between gap-6">
+                  <div className="min-w-0">
+                    <div className="text-[10px] font-display font-semibold tracking-[0.42em] text-white/45">
+                      ISSUE
+                    </div>
+                    <div className="mt-3 truncate font-display text-xl font-extrabold tracking-wide text-white md:text-2xl">
+                      {issue.title}
+                    </div>
+                    <div className="mt-4 h-px w-10 bg-[rgba(210,170,65,0.30)] transition-all duration-300 ease-out group-hover:w-16 group-hover:bg-[rgba(210,170,65,0.55)]" />
                   </div>
+
+                  <span className="shrink-0 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[11px] font-display font-semibold tracking-widest text-[rgba(235,205,120,0.95)] shadow-[0_10px_25px_rgba(0,0,0,0.45)] transition duration-300 ease-out group-hover:border-[rgba(210,170,65,0.35)] group-hover:bg-[rgba(210,170,65,0.95)] group-hover:text-black">
+                    Explore ?
+                  </span>
                 </div>
 
-                {/* Card Sparkle Effect */}
-                <div className="absolute -top-10 -right-10 w-32 h-32 bg-gold/5 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-all duration-700" />
+                {/* Quiet corner bloom */}
+                <div className="pointer-events-none absolute -right-10 -top-10 h-28 w-28 rounded-full bg-[rgba(210,170,65,0.10)] blur-2xl opacity-0 transition duration-300 ease-out group-hover:opacity-100" />
               </div>
             </motion.a>
           ))}
