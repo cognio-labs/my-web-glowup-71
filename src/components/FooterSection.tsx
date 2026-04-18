@@ -2,151 +2,98 @@ import { motion } from "framer-motion";
 import { FaInstagram, FaLinkedin, FaFacebookF } from "react-icons/fa";
 import { SiSubstack } from "react-icons/si";
 
-const socialLinks = [
+const socials = [
   {
-    name: "Substack",
+    name: "SUBSTACK",
+    icon: <SiSubstack className="text-xl md:text-2xl" />,
+    color: "#FF6719",
     href: "https://substack.com/@ananddaofficial",
-    icon: SiSubstack,
   },
   {
-    name: "Instagram",
+    name: "INSTAGRAM",
+    icon: <FaInstagram className="text-xl md:text-2xl" />,
+    gradient: "from-pink-500 via-purple-500 to-orange-400",
+    color: "#E4405F",
     href: "https://www.instagram.com/ananddaofficial",
-    icon: FaInstagram,
   },
   {
-    name: "LinkedIn",
+    name: "LINKEDIN",
+    icon: <FaLinkedin className="text-xl md:text-2xl" />,
+    color: "#0A66C2",
     href: "https://www.linkedin.com/company/ananddabliss",
-    icon: FaLinkedin,
   },
   {
-    name: "Facebook",
+    name: "FACEBOOK",
+    icon: <FaFacebookF className="text-xl md:text-2xl" />,
+    color: "#1877F2",
     href: "#",
-    icon: FaFacebookF,
   },
 ];
 
 export function FooterSection() {
   return (
-    <footer className="relative overflow-hidden border-t border-white/10 bg-[linear-gradient(180deg,#020617,#0f172a)] px-6 py-14">
-      {/* subtle background glows */}
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -top-24 left-[-120px] h-[420px] w-[420px] rounded-full bg-[radial-gradient(circle_at_center,rgba(99,102,241,0.22),transparent_60%)] blur-3xl" />
-        <div className="absolute -bottom-28 right-[-120px] h-[520px] w-[520px] rounded-full bg-[radial-gradient(circle_at_center,rgba(168,85,247,0.18),transparent_60%)] blur-3xl" />
-      </div>
-
-      <div className="relative mx-auto max-w-6xl">
+    <footer className="py-8 px-6 bg-white text-slate-800 border-t border-slate-100">
+      <div className="max-w-5xl mx-auto text-center space-y-6">
         <motion.div
-          initial={{ opacity: 0, y: 12 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="grid grid-cols-1 gap-10 md:grid-cols-12"
+          viewport={{ once: true }}
         >
-          <div className="md:col-span-5">
-            <div className="text-xs font-medium tracking-[0.22em] text-white/60">ANANDDA</div>
-            <div className="mt-3 text-2xl font-semibold tracking-tight text-white md:text-3xl">
-              Premium calm. Modern clarity.
-            </div>
-            <div className="mt-4 max-w-md text-sm leading-relaxed text-white/65">
-              A clean, high-contrast, glass-first UI that feels like a modern AI / tech startup.
-            </div>
-
-            <div className="mt-6 flex flex-wrap gap-2">
-              {["Dark gradient", "Glass cards", "Subtle glow", "Responsive"].map((tag) => (
-                <span
-                  key={tag}
-                  className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-medium tracking-wide text-white/70"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          <div className="md:col-span-7">
-            <div className="grid grid-cols-2 gap-6 sm:grid-cols-3">
-              <div>
-                <div className="text-xs font-semibold tracking-[0.18em] text-white/70">Product</div>
-                <ul className="mt-4 space-y-2 text-sm text-white/60">
-                  {["Features", "Services", "Changelog"].map((item) => (
-                    <li key={item}>
-                      <a className="transition hover:text-white" href="#">
-                        {item}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div>
-                <div className="text-xs font-semibold tracking-[0.18em] text-white/70">Company</div>
-                <ul className="mt-4 space-y-2 text-sm text-white/60">
-                  {["About", "Careers", "Contact"].map((item) => (
-                    <li key={item}>
-                      <a className="transition hover:text-white" href="#">
-                        {item}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div>
-                <div className="text-xs font-semibold tracking-[0.18em] text-white/70">Social</div>
-                <div className="mt-4 flex flex-wrap gap-3">
-                  {socialLinks.map((s) => {
-                    const Icon = s.icon;
-                    return (
-                      <a
-                        key={s.name}
-                        href={s.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="group flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-2 text-sm text-white/70 transition hover:border-white/20 hover:bg-white/10 hover:text-white"
-                      >
-                        <Icon className="text-base opacity-80 transition group-hover:opacity-100" />
-                        <span className="text-[12px] font-medium">{s.name}</span>
-                      </a>
-                    );
-                  })}
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-10 rounded-[18px] border border-white/10 bg-[rgba(255,255,255,0.05)] p-5 shadow-[0_18px_55px_rgba(0,0,0,0.45)] backdrop-blur-xl">
-              <div className="text-sm font-semibold text-white">Get updates</div>
-              <div className="mt-2 text-sm text-white/65">
-                Follow along for new issues and product updates.
-              </div>
-              <div className="mt-4 flex flex-col gap-3 sm:flex-row">
-                <a
-                  href="https://substack.com/@ananddaofficial"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-[#0b1220] transition hover:opacity-95"
-                >
-                  Subscribe
-                </a>
-                <a
-                  href="https://www.magzter.com/IN/Anandda-Magazine/Anandda/Lifestyle/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-5 py-2.5 text-sm font-semibold text-white/85 transition hover:bg-white/10"
-                >
-                  Magzter
-                </a>
-              </div>
-            </div>
-          </div>
+          <h3 className="text-3xl md:text-4xl font-display text-gold font-bold tracking-[0.4em] uppercase">
+            ANAND<span className="italic">D</span>A
+          </h3>
+          <p className="mt-2 text-slate-500 font-serif italic text-lg tracking-wide">
+            A Confluence of Pathways to Bliss
+          </p>
         </motion.div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-8 text-center text-xs text-white/50 md:flex-row md:text-left">
-          <div>© 2026 Anandda. All rights reserved.</div>
-          <div className="flex gap-5">
-            <a className="transition hover:text-white" href="#">Privacy</a>
-            <a className="transition hover:text-white" href="#">Terms</a>
-          </div>
+        <div className="flex items-center justify-center gap-6 md:gap-10 pb-4">
+          <a
+            href="https://substack.com/@ananddaofficial"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex flex-col items-center"
+          >
+            <SiSubstack className="text-xl md:text-2xl text-[#FF6719] hover:scale-110 hover:drop-shadow-[0_0_8px_#FF6719] transition-all duration-300" />
+            <span className="block text-[10px] mt-2 text-[#FF6719]/60 group-hover:text-[#FF6719] transition-colors font-display tracking-[0.2em] font-bold uppercase">SUBSTACK</span>
+          </a>
+
+          <a
+            href="https://www.instagram.com/ananddaofficial"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex flex-col items-center"
+          >
+            <FaInstagram className="text-xl md:text-2xl text-[#E4405F] hover:scale-110 hover:drop-shadow-[0_0_8px_#E4405F] transition-all duration-300" />
+            <span className="block text-[10px] mt-2 text-[#E4405F]/60 group-hover:text-[#E4405F] transition-colors font-display tracking-[0.2em] font-bold uppercase text-center">INSTAGRAM</span>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/company/ananddabliss"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex flex-col items-center"
+          >
+            <FaLinkedin className="text-xl md:text-2xl text-[#0A66C2] hover:scale-110 hover:drop-shadow-[0_0_8px_#0A66C2] transition-all duration-300" />
+            <span className="block text-[10px] mt-2 text-[#0A66C2]/60 group-hover:text-[#0A66C2] transition-colors font-display tracking-[0.2em] font-bold uppercase text-center">LINKEDIN</span>
+          </a>
+
+          <a
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex flex-col items-center"
+          >
+            <FaFacebookF className="text-xl md:text-2xl text-[#1877F2] hover:scale-110 hover:drop-shadow-[0_0_8px_#1877F2] transition-all duration-300" />
+            <span className="block text-[10px] mt-2 text-[#1877F2]/60 group-hover:text-[#1877F2] transition-colors font-display tracking-[0.2em] font-bold uppercase text-center">FACEBOOK</span>
+          </a>
         </div>
+
+        <div className="w-12 h-px bg-slate-200 mx-auto" />
+
+        <p className="text-[9px] text-slate-400 font-display tracking-[0.4em] uppercase">
+          © 2026 Anandda. All rights reserved.
+        </p>
       </div>
     </footer>
   );
