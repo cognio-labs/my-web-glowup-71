@@ -68,9 +68,9 @@ export function HeroSection() {
 
       {/* Enhanced Golden Light Flares */}
       <motion.div
-        animate={{ opacity: [0.3, 0.6, 0.3], scale: [1, 1.2, 1] }}
+        animate={{ opacity: [0.28, 0.6, 0.28], scale: [1, 1.2, 1] }}
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-        className="pointer-events-none absolute bottom-1/3 left-1/2 h-[300px] w-[500px] -translate-x-1/2 rounded-full bg-gold/15 blur-[100px]"
+        className="pointer-events-none absolute bottom-1/3 left-1/2 h-[300px] w-[560px] -translate-x-1/2 rounded-full bg-gold/15 blur-[110px]"
       />
 
       {/* Floating Sparkles */}
@@ -79,14 +79,14 @@ export function HeroSection() {
           // eslint-disable-next-line react/no-array-index-key
           key={i}
           initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: [0, 1, 0], scale: [0, 1, 0], y: [-10, -100] }}
+          animate={{ opacity: [0, 1, 0], scale: [0, 1, 0], y: [-10, -110] }}
           transition={{
             duration: 3 + Math.random() * 4,
             repeat: Infinity,
             delay: Math.random() * 5,
             ease: "easeOut",
           }}
-          className="pointer-events-none absolute h-1 w-1 rounded-full bg-gold shadow-[0_0_8px_rgba(212,175,55,1)]"
+          className="pointer-events-none absolute h-1 w-1 rounded-full bg-gold shadow-[0_0_10px_rgba(212,175,55,0.95)]"
           style={{ left: `${Math.random() * 100}%`, top: `${50 + Math.random() * 40}%` }}
         />
       ))}
@@ -107,7 +107,7 @@ export function HeroSection() {
           <h1 className="font-display mb-2 text-4xl font-bold tracking-widest text-transparent drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)] filter brightness-110 bg-gradient-to-b from-white via-gold-light to-gold bg-clip-text md:mb-4 md:text-8xl">
             ANAND<span className="italic">D</span>A
           </h1>
-          <p className="font-serif text-[10px] font-medium uppercase tracking-[0.3em] text-gold-light drop-shadow-[0_4px_4px_rgba(0,0,0,0.9)] md:text-xl md:tracking-[0.4em]">
+          <p className="font-serif text-[10px] font-medium uppercase tracking-[0.3em] text-gold-light drop-shadow-[0_4px_4px_rgba(0,0,0,0.9)] md:text-lg md:tracking-[0.4em]">
             A Confluence of Pathways to Bliss
           </p>
         </motion.div>
@@ -154,50 +154,61 @@ export function HeroSection() {
           </a>
         </motion.div>
 
-        {/* 6 archive boxes inside hero */}
+        {/* 6 premium issue boxes inside hero */}
         <motion.div
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.85, ease: "easeOut" }}
-          className="mx-auto mt-10 max-w-5xl"
+          className="mx-auto mt-6 max-w-4xl"
         >
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {issues.map((issue) => (
-              <a
-                key={issue.title}
-                href={issue.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative block"
-              >
-                <div className="absolute -inset-[1px] rounded-[22px] bg-[radial-gradient(circle_at_20%_0%,rgba(210,170,65,0.55),rgba(210,170,65,0)_55%)] opacity-25 blur-xl transition duration-300 ease-out group-hover:opacity-75" />
+          <div className="relative">
+            {/* Calm glass tray behind cards */}
+            <div className="pointer-events-none absolute -inset-2 rounded-[24px] bg-[radial-gradient(circle_at_20%_0%,rgba(210,170,65,0.10),transparent_55%)] blur-xl" />
+            <div className="pointer-events-none absolute -inset-2 rounded-[24px] border border-white/10 bg-white/5 backdrop-blur-sm" />
 
-                <div className="relative overflow-hidden rounded-[20px] border border-white/10 bg-[linear-gradient(135deg,rgba(50,18,90,0.55),rgba(12,8,24,0.70))] p-6 shadow-[0_16px_45px_rgba(0,0,0,0.55)] backdrop-blur-xl transition duration-300 ease-out group-hover:-translate-y-2 group-hover:scale-[1.03] group-hover:border-[rgba(210,170,65,0.35)]">
-                  <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.10),transparent_55%)] opacity-70" />
-                  <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(120deg,transparent,rgba(210,170,65,0.10),transparent)] opacity-0 transition duration-300 ease-out group-hover:opacity-100" />
+            <div className="relative grid grid-cols-1 gap-3 p-1 md:grid-cols-2 md:p-2 lg:grid-cols-3">
+              {issues.map((issue) => (
+                <a
+                  key={issue.title}
+                  href={issue.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative block"
+                >
+                  {/* soft golden border glow */}
+                  <div className="absolute -inset-[1px] rounded-[22px] bg-[radial-gradient(circle_at_20%_0%,rgba(210,170,65,0.60),rgba(210,170,65,0)_58%)] opacity-25 blur-xl transition-all duration-300 ease-out group-hover:opacity-80" />
 
-                  <div className="relative z-10 flex items-start justify-between gap-5">
-                    <div className="min-w-0 text-left">
-                      <div className="text-[10px] font-display font-semibold tracking-[0.42em] text-white/45">
-                        ISSUE
+                  <div className="relative overflow-hidden rounded-[20px] border border-white/10 bg-[linear-gradient(135deg,rgba(60,22,110,0.55),rgba(14,10,26,0.74))] p-4 shadow-[0_14px_38px_rgba(0,0,0,0.58)] backdrop-blur-xl transition-all duration-300 ease-out group-hover:-translate-y-2 group-hover:scale-[1.03] group-hover:border-[rgba(210,170,65,0.38)]">
+                    {/* inner gradient sheen */}
+                    <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_28%_22%,rgba(255,255,255,0.12),transparent_55%)] opacity-80" />
+                    <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(115deg,transparent,rgba(210,170,65,0.12),transparent)] opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100" />
+
+                    <div className="relative z-10 flex items-start justify-between gap-4">
+                      <div className="min-w-0 text-left">
+                        <div className="text-[10px] font-display font-semibold tracking-[0.42em] text-white/45">
+                          ISSUE
+                        </div>
+                        <div className="mt-3 truncate font-display text-sm font-extrabold tracking-wide text-white md:text-base">
+                          {issue.title}
+                        </div>
+                        <div className="mt-2 truncate font-serif text-xs italic text-white/65">
+                          {issue.tagline}
+                        </div>
+
+                        <div className="mt-4 h-px w-10 bg-[rgba(210,170,65,0.26)] transition-all duration-300 ease-out group-hover:w-16 group-hover:bg-[rgba(210,170,65,0.55)]" />
                       </div>
-                      <div className="mt-3 truncate font-display text-lg font-extrabold tracking-wide text-white md:text-xl">
-                        {issue.title}
-                      </div>
-                      <div className="mt-2 truncate font-serif text-sm italic text-white/65">
-                        {issue.tagline}
-                      </div>
+
+                      <span className="shrink-0 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-[9px] font-display font-semibold tracking-widest text-[rgba(235,205,120,0.95)] shadow-[0_10px_25px_rgba(0,0,0,0.45)] transition-all duration-300 ease-out group-hover:border-[rgba(210,170,65,0.35)] group-hover:bg-[rgba(210,170,65,0.95)] group-hover:text-black">
+                        Explore ?
+                      </span>
                     </div>
 
-                    <span className="shrink-0 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[11px] font-display font-semibold tracking-widest text-[rgba(235,205,120,0.95)] shadow-[0_10px_25px_rgba(0,0,0,0.45)] transition duration-300 ease-out group-hover:border-[rgba(210,170,65,0.35)] group-hover:bg-[rgba(210,170,65,0.95)] group-hover:text-black">
-                      Explore ?
-                    </span>
+                    {/* quiet corner bloom */}
+                    <div className="pointer-events-none absolute -right-10 -top-10 h-28 w-28 rounded-full bg-[rgba(210,170,65,0.12)] blur-2xl opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100" />
                   </div>
-
-                  <div className="pointer-events-none absolute -right-10 -top-10 h-28 w-28 rounded-full bg-[rgba(210,170,65,0.10)] blur-2xl opacity-0 transition duration-300 ease-out group-hover:opacity-100" />
-                </div>
-              </a>
-            ))}
+                </a>
+              ))}
+            </div>
           </div>
         </motion.div>
       </div>
