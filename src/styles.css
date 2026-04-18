@@ -621,3 +621,24 @@ body.menu-open {
     z-index: -2;
   }
 }
+/* Premium image hover (site-wide) */
+@layer components {
+  /* opt-out by adding class="no-premium-hover" */
+  main img:not(.no-premium-hover) {
+    transition: transform 320ms ease, filter 320ms ease, box-shadow 320ms ease;
+    will-change: transform;
+    transform-origin: center;
+    border-radius: 16px;
+  }
+
+  main img:not(.no-premium-hover):hover,
+  main a:hover img:not(.no-premium-hover) {
+    transform: translateY(-2px) scale(1.025);
+    filter: saturate(1.08) contrast(1.04) brightness(1.03);
+    box-shadow:
+      0 18px 55px rgba(0, 0, 0, 0.45),
+      0 0 0 1px rgba(255, 255, 255, 0.10),
+      0 0 35px rgba(210, 170, 65, 0.14),
+      0 0 60px rgba(120, 60, 220, 0.12);
+  }
+}
