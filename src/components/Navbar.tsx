@@ -119,7 +119,7 @@ export function Navbar() {
             style={{ background: "none", border: "none", cursor: "pointer" }}
           >
             <img src={logo} alt="Anandda logo" className="h-12 w-12 rounded-full object-cover mr-3 inline-block shadow-md" />
-            <span className="logo-text">ANAN<span className="italic">D</span>DA</span>
+            <span className="logo-text">ANAND<span className="italic">D</span>A</span>
           </button>
 
           {/* Desktop nav */}
@@ -192,7 +192,7 @@ export function Navbar() {
         <div className="mobile-drawer">
           <div className="mobile-header">
             <span className="logo-text" style={{ fontSize: "0.9rem", letterSpacing: "0.35em" }}>
-              ANAN<span className="italic">D</span>DA
+              ANAND<span className="italic">D</span>A
             </span>
             <button
               className="mobile-close"
