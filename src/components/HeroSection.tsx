@@ -37,7 +37,7 @@ const issues = [
 
 export function HeroSection() {
   return (
-    <section id="home" className="relative py-16 md:py-24 flex items-center justify-center overflow-hidden bg-slate-900">
+    <section id="home" className="relative py-12 md:py-20 flex items-center justify-center overflow-hidden bg-slate-900">
       <img
         src={heroBg}
         alt=""
@@ -101,23 +101,23 @@ export function HeroSection() {
         />
       ))}
 
-      <div className="relative z-10 text-center px-6 max-w-6xl mx-auto">
+      <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
         {/* Main Centered Logo and Heading */}
         <motion.div 
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
-          className="mb-12 flex flex-col items-center"
+          className="mb-6 md:mb-12 flex flex-col items-center"
         >
           <img 
             src={logo} 
             alt="Anandda logo" 
-            className="h-32 w-32 md:h-48 md:w-48 rounded-full object-cover shadow-2xl border-2 border-gold/30 mb-8" 
+            className="h-24 w-24 md:h-48 md:w-48 rounded-full object-cover shadow-2xl border-2 border-gold/30 mb-4 md:mb-8" 
           />
-          <h1 className="text-5xl md:text-8xl font-bold bg-gradient-to-b from-white via-gold-light to-gold bg-clip-text text-transparent font-display tracking-widest mb-4 drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)] filter brightness-110">
+          <h1 className="text-4xl md:text-8xl font-bold bg-gradient-to-b from-white via-gold-light to-gold bg-clip-text text-transparent font-display tracking-widest mb-2 md:mb-4 drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)] filter brightness-110">
             ANAND<span className="italic">D</span>A
           </h1>
-          <p className="text-sm md:text-xl text-gold-light uppercase tracking-[0.4em] font-serif font-medium drop-shadow-[0_4px_4px_rgba(0,0,0,0.9)]">
+          <p className="text-[10px] md:text-xl text-gold-light uppercase tracking-[0.3em] md:tracking-[0.4em] font-serif font-medium drop-shadow-[0_4px_4px_rgba(0,0,0,0.9)]">
             A Confluence of Pathways to Bliss
           </p>
         </motion.div>
@@ -126,7 +126,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
-          className="mt-6 text-base md:text-lg text-white/80 font-serif max-w-2xl mx-auto leading-relaxed drop-shadow-md italic"
+          className="mt-4 md:mt-6 text-sm md:text-lg text-white/80 font-serif max-w-2xl mx-auto leading-relaxed drop-shadow-md italic"
         >
           In a world that moves faster than ever, Anandda is your pause — a sacred
           confluence where wisdom, art, and awareness meet.
@@ -136,15 +136,15 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.6 }}
-            className="mt-10 flex flex-col sm:flex-row gap-4 justify-center"
+            className="mt-8 md:mt-10 flex flex-col sm:flex-row gap-3 md:gap-4 justify-center"
         >
-            <a href="https://heyzine.com/flip-book/f03b5c07d2.html" target="_blank" rel="noopener noreferrer" className="btn-gold px-10 py-4 text-sm shadow-2xl hover:shadow-gold/30">
+            <a href="https://heyzine.com/flip-book/f03b5c07d2.html" target="_blank" rel="noopener noreferrer" className="btn-gold px-8 md:px-10 py-3.5 md:py-4 text-xs md:text-sm shadow-2xl hover:shadow-gold/30">
                 READ THE LATEST ISSUE
             </a>
-            <a href="https://www.magzter.com/IN/Anandda-Magazine/Anandda/Lifestyle/" target="_blank" rel="noopener noreferrer" className="btn-outline-gold px-10 py-4 text-sm border-white/20 text-white hover:border-gold hover:text-gold backdrop-blur-md">
+            <a href="https://www.magzter.com/IN/Anandda-Magazine/Anandda/Lifestyle/" target="_blank" rel="noopener noreferrer" className="btn-outline-gold px-8 md:px-10 py-3.5 md:py-4 text-xs md:text-sm border-white/20 text-white hover:border-gold hover:text-gold backdrop-blur-md">
                 FOLLOW ON MAGZTER
             </a>
-            <a href="https://substack.com/@ananddaofficial" target="_blank" rel="noopener noreferrer" className="btn-outline-gold px-10 py-4 text-sm border-white/20 text-white hover:border-gold hover:text-gold backdrop-blur-md">
+            <a href="https://substack.com/@ananddaofficial" target="_blank" rel="noopener noreferrer" className="btn-outline-gold px-8 md:px-10 py-3.5 md:py-4 text-xs md:text-sm border-white/20 text-white hover:border-gold hover:text-gold backdrop-blur-md">
                 SUBSCRIBE ON SUBSTACK
             </a>
         </motion.div>
@@ -154,10 +154,10 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.9 }}
-          className="mt-24"
+          className="mt-16 md:mt-24"
         >
           <h2 className="text-2xl md:text-3xl font-display font-bold text-gold-light tracking-[0.3em] uppercase mb-4 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] filter brightness-125">OUR ARCHIVES</h2>
-          <div className="w-20 h-0.5 bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-10 shadow-[0_0_10px_rgba(212,175,55,0.5)]" />
+          <div className="w-20 h-0.5 bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-8 md:mb-10 shadow-[0_0_10px_rgba(212,175,55,0.5)]" />
 
           <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
             {issues.map((issue, index) => (
