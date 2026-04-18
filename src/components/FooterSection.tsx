@@ -40,7 +40,7 @@ export function FooterSection() {
           viewport={{ once: true }}
         >
           <h3 className="text-3xl md:text-4xl font-display text-gold font-bold tracking-[0.4em] uppercase">
-            ANAN<span className="italic">D</span>DA
+            ANAND<span className="italic">D</span>A
           </h3>
           <p className="mt-2 text-slate-500 font-serif italic text-lg tracking-wide">
             A Confluence of Pathways to Bliss
