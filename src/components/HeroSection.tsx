@@ -104,10 +104,10 @@ export function HeroSection() {
             alt="Anandda logo"
             className="mb-4 h-24 w-24 rounded-full border-2 border-gold/30 object-cover shadow-2xl md:mb-8 md:h-48 md:w-48"
           />
-          <h1 className="font-display mb-2 text-4xl font-bold tracking-widest text-transparent drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)] filter brightness-110 bg-gradient-to-b from-white via-gold-light to-gold bg-clip-text md:mb-4 md:text-8xl">
+          <h1 className="font-display mb-2 bg-gradient-to-b from-white via-gold-light to-gold bg-clip-text text-4xl font-bold tracking-widest text-transparent drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)] filter brightness-110 md:mb-4 md:text-8xl">
             ANAND<span className="italic">D</span>A
           </h1>
-          <p className="font-serif text-[10px] font-medium uppercase tracking-[0.3em] text-gold-light drop-shadow-[0_4px_4px_rgba(0,0,0,0.9)] md:text-lg md:tracking-[0.4em]">
+          <p className="font-serif text-[10px] font-medium uppercase tracking-[0.3em] text-gold-light drop-shadow-[0_4px_4px_rgba(0,0,0,0.9)] md:text-xl md:tracking-[0.4em]">
             A Confluence of Pathways to Bliss
           </p>
         </motion.div>
@@ -154,61 +154,43 @@ export function HeroSection() {
           </a>
         </motion.div>
 
-        {/* 6 premium issue boxes inside hero */}
+        {/* 6 issue buttons inside hero (instead of big boxes) */}
         <motion.div
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.85, ease: "easeOut" }}
           className="mx-auto mt-6 max-w-4xl"
         >
-          <div className="relative">
-            {/* Calm glass tray behind cards */}
-            <div className="pointer-events-none absolute -inset-2 rounded-[24px] bg-[radial-gradient(circle_at_20%_0%,rgba(210,170,65,0.10),transparent_55%)] blur-xl" />
-            <div className="pointer-events-none absolute -inset-2 rounded-[24px] border border-white/10 bg-white/5 backdrop-blur-sm" />
+          <div className="pointer-events-none mx-auto h-px w-[min(760px,92%)] bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
 
-            <div className="relative grid grid-cols-1 gap-3 p-1 md:grid-cols-2 md:p-2 lg:grid-cols-3">
-              {issues.map((issue) => (
-                <a
-                  key={issue.title}
-                  href={issue.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group relative block"
-                >
-                  {/* soft golden border glow */}
-                  <div className="absolute -inset-[1px] rounded-[22px] bg-[radial-gradient(circle_at_20%_0%,rgba(210,170,65,0.60),rgba(210,170,65,0)_58%)] opacity-25 blur-xl transition-all duration-300 ease-out group-hover:opacity-80" />
+          <div className="mt-6 grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
+            {issues.map((issue) => (
+              <a
+                key={issue.title}
+                href={issue.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative flex items-center justify-between gap-4 rounded-2xl border border-white/10 bg-white/5 px-5 py-4 text-left shadow-[0_14px_38px_rgba(0,0,0,0.45)] backdrop-blur-xl transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.01] hover:border-gold/35"
+              >
+                <span className="min-w-0">
+                  <span className="block text-[10px] font-display font-semibold tracking-[0.42em] text-white/45">
+                    ISSUE
+                  </span>
+                  <span className="mt-2 block truncate font-display text-sm font-extrabold tracking-wide text-white md:text-base">
+                    {issue.title}
+                  </span>
+                  <span className="mt-1 block truncate font-serif text-xs italic text-white/65">
+                    {issue.tagline}
+                  </span>
+                </span>
 
-                  <div className="relative overflow-hidden rounded-[20px] border border-white/10 bg-[linear-gradient(135deg,rgba(60,22,110,0.55),rgba(14,10,26,0.74))] p-4 shadow-[0_14px_38px_rgba(0,0,0,0.58)] backdrop-blur-xl transition-all duration-300 ease-out group-hover:-translate-y-2 group-hover:scale-[1.03] group-hover:border-[rgba(210,170,65,0.38)]">
-                    {/* inner gradient sheen */}
-                    <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_28%_22%,rgba(255,255,255,0.12),transparent_55%)] opacity-80" />
-                    <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(115deg,transparent,rgba(210,170,65,0.12),transparent)] opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100" />
+                <span className="shrink-0 rounded-full bg-gradient-to-r from-gold via-gold-light to-gold px-4 py-2 text-[10px] font-bold tracking-widest text-white shadow-lg shadow-gold/20 transition duration-300 group-hover:shadow-gold/35">
+                  Explore ?
+                </span>
 
-                    <div className="relative z-10 flex items-start justify-between gap-4">
-                      <div className="min-w-0 text-left">
-                        <div className="text-[10px] font-display font-semibold tracking-[0.42em] text-white/45">
-                          ISSUE
-                        </div>
-                        <div className="mt-3 truncate font-display text-sm font-extrabold tracking-wide text-white md:text-base">
-                          {issue.title}
-                        </div>
-                        <div className="mt-2 truncate font-serif text-xs italic text-white/65">
-                          {issue.tagline}
-                        </div>
-
-                        <div className="mt-4 h-px w-10 bg-[rgba(210,170,65,0.26)] transition-all duration-300 ease-out group-hover:w-16 group-hover:bg-[rgba(210,170,65,0.55)]" />
-                      </div>
-
-                      <span className="shrink-0 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-[9px] font-display font-semibold tracking-widest text-[rgba(235,205,120,0.95)] shadow-[0_10px_25px_rgba(0,0,0,0.45)] transition-all duration-300 ease-out group-hover:border-[rgba(210,170,65,0.35)] group-hover:bg-[rgba(210,170,65,0.95)] group-hover:text-black">
-                        Explore ?
-                      </span>
-                    </div>
-
-                    {/* quiet corner bloom */}
-                    <div className="pointer-events-none absolute -right-10 -top-10 h-28 w-28 rounded-full bg-[rgba(210,170,65,0.12)] blur-2xl opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100" />
-                  </div>
-                </a>
-              ))}
-            </div>
+                <span className="pointer-events-none absolute -inset-[1px] rounded-2xl bg-[radial-gradient(circle_at_20%_0%,rgba(210,170,65,0.55),rgba(210,170,65,0)_58%)] opacity-0 blur-xl transition duration-300 ease-out group-hover:opacity-70" />
+              </a>
+            ))}
           </div>
         </motion.div>
       </div>
