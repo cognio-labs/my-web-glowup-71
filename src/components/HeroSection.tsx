@@ -156,8 +156,8 @@ export function HeroSection() {
           transition={{ duration: 1, delay: 0.9 }}
           className="mt-24"
         >
-          <h2 className="text-xl md:text-2xl font-display font-bold text-gold/80 tracking-widest uppercase mb-2">OUR ARCHIVES</h2>
-          <div className="w-12 h-0.5 bg-gold/40 mx-auto mb-10" />
+          <h2 className="text-2xl md:text-3xl font-display font-bold text-gold-light tracking-[0.3em] uppercase mb-4 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] filter brightness-125">OUR ARCHIVES</h2>
+          <div className="w-20 h-0.5 bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-10 shadow-[0_0_10px_rgba(212,175,55,0.5)]" />
 
           <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
             {issues.map((issue, index) => (
