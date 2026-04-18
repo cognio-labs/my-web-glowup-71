@@ -40,50 +40,91 @@ const issues = [
 
 export function ArchiveSection() {
   return (
-    <section id="archives" className="py-6 md:py-10 px-6 bg-secondary">
-      <div className="max-w-7xl mx-auto">
+    <section id="archives" className="relative py-12 md:py-16 px-6 overflow-hidden bg-[#0a001a]">
+      {/* Mystical Background Elements */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-deep-purple/20 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-gold/5 rounded-full blur-[120px] pointer-events-none" />
+      </div>
+
+      {/* Floating Particles Effect */}
+      {[...Array(15)].map((_, i) => (
+        <motion.div
+          key={`particle-${i}`}
+          animate={{
+            y: [0, -100],
+            opacity: [0, 0.6, 0],
+            scale: [0, 1, 0]
+          }}
+          transition={{
+            duration: 5 + Math.random() * 5,
+            repeat: Infinity,
+            delay: Math.random() * 5,
+            ease: "linear"
+          }}
+          className="absolute w-1 h-1 bg-gold/40 rounded-full blur-[1px] pointer-events-none z-0"
+          style={{
+            left: `${Math.random() * 100}%`,
+            top: `${80 + Math.random() * 20}%`
+          }}
+        />
+      ))}
+
+      <div className="relative z-10 max-w-6xl mx-auto">
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={fadeInUp}
-          className="text-center mb-10"
+          className="text-center mb-12"
         >
-          <h2 className="section-heading text-4xl md:text-5xl uppercase tracking-widest">OUR ARCHIVES</h2>
-          <div className="gold-divider w-24 mx-auto mt-4" />
+          <h2 className="text-3xl md:text-5xl font-display font-bold text-gold-light tracking-[0.3em] uppercase mb-4 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] filter brightness-110">OUR ARCHIVES</h2>
+          <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mt-4" />
+          <p className="mt-6 text-slate-400 font-serif italic text-lg max-w-2xl mx-auto">
+            Explore our collection of past issues, each a unique journey through wisdom and art.
+          </p>
         </motion.div>
 
-        <div className="grid gap-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
+        <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {issues.map((issue, index) => (
             <motion.a
               key={issue.title}
               href={issue.url}
               target="_blank"
               rel="noopener noreferrer"
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.05 }}
-              className="group relative p-[1px] rounded-2xl bg-gradient-to-r from-gold/50 via-gold to-gold/50 hover:scale-105 transition-all duration-300"
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="group relative"
             >
-              <div className="rounded-2xl bg-[#0f172a]/90 backdrop-blur-xl p-4 h-full border border-white/10 shadow-xl flex flex-col justify-between relative z-10 transition-colors group-hover:bg-[#0f172a]/80">
-                <div>
-                  <div className="text-[10px] tracking-widest text-gold mb-2 font-display font-bold uppercase">
+              {/* Outer Glow on Hover */}
+              <div className="absolute -inset-1 rounded-[22px] bg-gradient-to-r from-gold/0 via-gold/40 to-gold/0 opacity-0 group-hover:opacity-100 blur-xl transition-all duration-500" />
+              
+              <div className="relative h-44 md:h-48 rounded-[20px] bg-gradient-to-br from-[#2a0f4a]/60 via-[#1a0f2e]/80 to-[#3d0f5e]/60 backdrop-blur-xl border border-white/10 p-7 flex flex-row items-center justify-between transition-all duration-500 group-hover:-translate-y-2 group-hover:scale-[1.03] group-hover:border-gold/30 shadow-2xl overflow-hidden">
+                {/* Subtle Inner Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-gold/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                
+                <div className="relative z-10 flex flex-col justify-center text-left">
+                  <span className="text-[10px] md:text-[11px] font-display font-bold tracking-[0.4em] text-white/40 uppercase mb-3">
                     ISSUE
-                  </div>
-                  <div className="text-sm font-bold text-white group-hover:text-gold-light transition-colors leading-tight">
+                  </span>
+                  <h3 className="text-xl md:text-2xl font-display font-extrabold text-white group-hover:text-gold-light transition-all duration-300 leading-tight">
                     {issue.title}
+                  </h3>
+                  <div className="mt-2 w-8 h-[1px] bg-gold/30 group-hover:w-16 transition-all duration-500" />
+                </div>
+
+                <div className="relative z-10">
+                  <div className="flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-gold-light font-display font-bold text-[10px] tracking-widest uppercase transition-all duration-300 group-hover:bg-gold group-hover:text-black group-hover:border-gold group-hover:scale-105 shadow-lg">
+                    <span>FLIPBOOK</span>
+                    <span className="text-lg leading-none transition-transform duration-300 group-hover:translate-x-1">→</span>
                   </div>
                 </div>
 
-                <div className="mt-6 flex items-center justify-between text-gold font-medium group-hover:gap-3 transition-all text-[10px] tracking-widest uppercase">
-                  <span>FLIPBOOK</span>
-                  <span className="transform group-hover:translate-x-1 transition text-sm">→</span>
-                </div>
+                {/* Card Sparkle Effect */}
+                <div className="absolute -top-10 -right-10 w-32 h-32 bg-gold/5 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-all duration-700" />
               </div>
-
-              {/* Glow Effect */}
-              <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 blur-xl bg-gradient-to-r from-gold/40 via-gold/60 to-gold/40 transition duration-500 pointer-events-none"></div>
             </motion.a>
           ))}
         </div>

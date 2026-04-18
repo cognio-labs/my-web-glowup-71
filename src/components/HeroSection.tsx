@@ -148,54 +148,6 @@ export function HeroSection() {
                 SUBSCRIBE ON SUBSTACK
             </a>
         </motion.div>
-
-        {/* Archives Section Inlined - More Compact and Premium */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.9 }}
-          className="mt-16 md:mt-24"
-        >
-          <h2 className="text-2xl md:text-3xl font-display font-bold text-gold-light tracking-[0.3em] uppercase mb-4 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] filter brightness-125">OUR ARCHIVES</h2>
-          <div className="w-20 h-0.5 bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-8 md:mb-10 shadow-[0_0_10px_rgba(212,175,55,0.5)]" />
-
-          <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
-            {issues.map((issue, index) => (
-              <motion.a
-                key={issue.title}
-                href={issue.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4, delay: 1.1 + index * 0.08 }}
-                className="group relative p-[1px] rounded-2xl bg-gradient-to-r from-gold/50 via-gold to-gold/50 hover:scale-105 transition-all duration-300 h-32 md:h-36"
-              >
-                <div className="rounded-2xl bg-gradient-to-br from-[#2a0f4a]/80 via-[#1a0f2e]/90 to-[#3d0f5e]/80 backdrop-blur-xl p-6 h-full border border-white/5 shadow-2xl flex flex-row items-center justify-between relative z-10 transition-all duration-500 group-hover:from-[#350f66]/90 group-hover:to-[#4a0f7a]/90 overflow-hidden ring-1 ring-white/5 group-hover:ring-gold/20">
-                  <div className="text-left relative z-20">
-                    <div className="text-[10px] tracking-[0.3em] text-gold/80 mb-1 font-display font-medium uppercase">
-                      ISSUE
-                    </div>
-                    <div className="text-base md:text-xl font-bold text-white group-hover:text-gold-light transition-all duration-300 leading-tight font-serif">
-                      {issue.title}
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-3 text-gold/90 font-medium text-[10px] tracking-widest uppercase bg-gold/5 py-2.5 px-4 rounded-full border border-gold/10 group-hover:bg-gold/20 group-hover:text-gold group-hover:scale-105 transition-all duration-300 relative z-20">
-                    <span className="font-display font-bold">FLIPBOOK</span>
-                    <span className="transform group-hover:translate-x-1 transition-transform text-sm">→</span>
-                  </div>
-
-                  {/* Internal Sexy Glow */}
-                  <div className="absolute -top-10 -right-10 w-32 h-32 bg-gold/5 rounded-full blur-2xl group-hover:bg-gold/15 transition-all duration-700" />
-                </div>
-
-                {/* Glow Effect */}
-                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 blur-xl bg-gradient-to-r from-gold/40 via-gold/60 to-gold/40 transition duration-500 pointer-events-none"></div>
-              </motion.a>
-            ))}
-          </div>
-        </motion.div>
       </div>
     </section>
   );
