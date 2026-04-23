@@ -2,6 +2,9 @@ import { motion } from "framer-motion";
 import heroBg from "@/assets/hero-bg-fixed.png";
 import logo from "@/assets/logo.png";
 
+const contactPhone = "+91 00000 00000";
+const contactPhoneHref = `tel:${contactPhone.replace(/[^\d+]/g, "")}`;
+
 const issues = [
   {
     title: "April 2026",
@@ -102,7 +105,7 @@ export function HeroSection() {
           <img
             src={logo}
             alt="Anandda logo"
-            className="mb-4 h-24 w-24 rounded-full border-2 border-gold/30 object-cover shadow-2xl md:mb-8 md:h-48 md:w-48"
+            className="mb-4 h-24 w-24 rounded-full border-2 border-gold/30 bg-white/90 p-1 object-contain shadow-2xl md:mb-8 md:h-48 md:w-48 md:p-2"
           />
           <h1 className="font-display mb-2 bg-gradient-to-b from-white via-gold-light to-gold bg-clip-text text-4xl font-bold tracking-widest text-transparent drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)] filter brightness-110 md:mb-4 md:text-8xl">
             ANAND<span className="italic">D</span>A
@@ -118,7 +121,7 @@ export function HeroSection() {
           transition={{ duration: 1, delay: 0.3 }}
           className="mx-auto mt-4 max-w-2xl font-serif text-sm italic leading-relaxed text-white/80 drop-shadow-md md:mt-6 md:text-lg"
         >
-          In a world that moves faster than ever, Anandda is your pause — a sacred confluence where
+          In a world that moves faster than ever, Anandda is your pause! a sacred confluence where
           wisdom, art, and awareness meet.
         </motion.p>
 
@@ -152,7 +155,22 @@ export function HeroSection() {
           >
             SUBSCRIBE ON SUBSTACK
           </a>
+          <a
+            href="#contact"
+            className="btn-outline-gold border-white/20 px-8 py-3.5 text-xs text-white backdrop-blur-md hover:border-gold hover:text-gold md:px-10 md:py-4 md:text-sm"
+          >
+            CONTACT
+          </a>
         </motion.div>
+
+        <div className="mt-4 text-center text-xs font-serif italic text-white/70 md:text-sm">
+          <a
+            href={contactPhoneHref}
+            className="underline decoration-white/20 underline-offset-4 transition-colors hover:text-white"
+          >
+            Mobile: {contactPhone}
+          </a>
+        </div>
 
         {/* 6 issue buttons inside hero (instead of big boxes) */}
         <motion.div
@@ -185,7 +203,7 @@ export function HeroSection() {
                 </span>
 
                 <span className="shrink-0 rounded-full bg-gradient-to-r from-gold via-gold-light to-gold px-4 py-2 text-[10px] font-bold tracking-widest text-white shadow-lg shadow-gold/20 transition duration-300 group-hover:shadow-gold/35">
-                  Explore ?
+                  Explore !
                 </span>
 
                 <span className="pointer-events-none absolute -inset-[1px] rounded-2xl bg-[radial-gradient(circle_at_20%_0%,rgba(210,170,65,0.55),rgba(210,170,65,0)_58%)] opacity-0 blur-xl transition duration-300 ease-out group-hover:opacity-70" />

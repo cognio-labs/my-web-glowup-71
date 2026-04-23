@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 type Issue = { title: string; url: string };
 
-// Keep adding issues here — the page automatically renders a 6+6 index list.
+// Keep adding issues here â€” the page automatically renders a 6+6 index list.
 const issues: Issue[] = [
   { title: "April 2026", url: "https://heyzine.com/flip-book/f03b5c07d2.html" },
   { title: "March 2026", url: "https://heyzine.com/flip-book/cedec35c24.html" },
@@ -76,7 +76,7 @@ export function ArchiveSection() {
           </h2>
           <div className="mx-auto mt-5 h-px w-28 bg-gradient-to-r from-transparent via-[rgba(210,170,65,0.80)] to-transparent" />
           <p className="mt-6 font-serif text-base italic text-white/70 md:text-lg">
-            A curated library of past issues—crafted with calm luxury, spiritual depth, and timeless design.
+            A curated library of past issues, crafted with calm luxury, spiritual depth, and timeless design.
           </p>
         </motion.div>
 
@@ -112,7 +112,7 @@ export function ArchiveSection() {
                   </div>
 
                   <span className="shrink-0 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[11px] font-display font-semibold tracking-widest text-[rgba(235,205,120,0.95)] shadow-[0_10px_25px_rgba(0,0,0,0.45)] transition duration-300 ease-out group-hover:border-[rgba(210,170,65,0.35)] group-hover:bg-[rgba(210,170,65,0.95)] group-hover:text-black">
-                    Explore ?
+                    Explore !
                   </span>
                 </div>
 
@@ -136,7 +136,7 @@ export function ArchiveSection() {
                       FLIPBOOK INDEX
                     </div>
                     <div className="mt-1 text-center font-serif text-sm italic text-white/65 md:text-left">
-                      Six issues per side — keep adding links anytime.
+                      Six issues per side â€” keep adding links anytime.
                     </div>
                   </div>
                   <div className="text-center text-[11px] font-display font-semibold tracking-widest text-[rgba(235,205,120,0.90)] md:text-right">
@@ -159,13 +159,13 @@ export function ArchiveSection() {
                               {issue.title}
                             </span>
                             <span className="shrink-0 font-display text-[11px] font-semibold tracking-widest text-[rgba(235,205,120,0.95)]">
-                              Explore ?
+                              Explore !
                             </span>
                           </a>
                         ) : (
                           <div className="flex items-center justify-between gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/35">
                             <span className="font-display font-semibold tracking-wide">Coming soon</span>
-                            <span className="font-display text-[11px] font-semibold tracking-widest">—</span>
+                            <span className="font-display text-[11px] font-semibold tracking-widest">â€”</span>
                           </div>
                         )}
                       </li>
@@ -186,13 +186,13 @@ export function ArchiveSection() {
                               {issue.title}
                             </span>
                             <span className="shrink-0 font-display text-[11px] font-semibold tracking-widest text-[rgba(235,205,120,0.95)]">
-                              Explore ?
+                              Explore !
                             </span>
                           </a>
                         ) : (
                           <div className="flex items-center justify-between gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/35">
                             <span className="font-display font-semibold tracking-wide">Coming soon</span>
-                            <span className="font-display text-[11px] font-semibold tracking-widest">—</span>
+                            <span className="font-display text-[11px] font-semibold tracking-widest">â€”</span>
                           </div>
                         )}
                       </li>

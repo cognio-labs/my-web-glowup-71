@@ -10,7 +10,7 @@ const fadeInUp = {
 const stats = [
   { number: "150+", label: "Countries" },
   { number: "88M+", label: "Readers" },
-  { number: "6", label: "Issues Published" },
+  { number: "7", label: "Issues Published" },
 ];
 
 export function GlobalReachSection() {
@@ -88,7 +88,6 @@ export function GlobalReachSection() {
     </section>
   );
 }
-
 
 
 

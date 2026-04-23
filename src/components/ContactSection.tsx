@@ -109,14 +109,14 @@ export function ContactSection() {
                 className="mx-auto flex max-w-md flex-col items-center text-center"
               >
                 <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-gold/20 bg-[linear-gradient(135deg,rgba(255,255,255,0.75),rgba(255,255,255,0.35))] shadow-[0_18px_40px_rgba(0,0,0,0.12)]">
-                  <span className="text-2xl">??</span>
+                  <span className="text-2xl">✓</span>
                 </div>
 
                 <div className="mt-5 text-2xl font-semibold text-deep-purple">
                   Message Sent!
                 </div>
                 <div className="mt-3 text-sm leading-relaxed text-slate-600 md:text-base">
-                  Thank you for reaching out ? We�ll get back to you within 24 hours ??
+                  Thank you for reaching out! We’ll get back to you within 24 hours.
                 </div>
 
                 <div className="mt-6 h-px w-24 bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
