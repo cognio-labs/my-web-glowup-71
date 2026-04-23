@@ -1,5 +1,9 @@
 ﻿import { motion } from "framer-motion";
 import leadershipImg from "@/assets/leadership-team.png";
+<<<<<<< HEAD
+=======
+import teamImg from "@/assets/our-team.png";
+>>>>>>> origin/main
 import { ClickableImage } from "./ClickableImage";
 
 const fadeInUp = {
@@ -7,6 +11,7 @@ const fadeInUp = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
 };
 
+<<<<<<< HEAD
 type TeamMember = {
   name: string;
   role: string;
@@ -40,6 +45,8 @@ function getInitials(name: string) {
   return (firstLetter + lastLetter).slice(0, 2) || firstLetter || "A";
 }
 
+=======
+>>>>>>> origin/main
 export function LeadershipSection() {
   return (
     <section id="leadership" className="py-6 md:py-10 px-6 purple-gradient-bg">
@@ -81,6 +88,7 @@ export function LeadershipSection() {
             viewport={{ once: true }}
             variants={fadeInUp}
           >
+<<<<<<< HEAD
             <div className="rounded-2xl image-glow overflow-hidden border border-white/10 bg-[linear-gradient(180deg,#2b0b46_0%,#3b1261_55%,#2b0b46_100%)] p-6 md:p-10">
               <div className="text-center">
                 <p className="font-serif italic text-white/80 text-lg md:text-xl">Meet</p>
@@ -126,6 +134,15 @@ export function LeadershipSection() {
                 Want individual photos on each card? Add them and I’ll wire them in.
               </p>
             </div>
+=======
+            <ClickableImage
+              src={teamImg}
+              alt="Meet Our Team"
+              className="rounded-2xl image-glow w-full"
+              width={1200}
+              height={500}
+            />
+>>>>>>> origin/main
           </motion.div>
         </div>
       </div>
