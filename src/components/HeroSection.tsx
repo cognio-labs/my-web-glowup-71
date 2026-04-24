@@ -203,7 +203,7 @@ export function HeroSection() {
                 </span>
 
                 <span className="shrink-0 rounded-full bg-gradient-to-r from-gold via-gold-light to-gold px-4 py-2 text-[10px] font-bold tracking-widest text-white shadow-lg shadow-gold/20 transition duration-300 group-hover:shadow-gold/35">
-                  Explore !
+                  Explore!
                 </span>
 
                 <span className="pointer-events-none absolute -inset-[1px] rounded-2xl bg-[radial-gradient(circle_at_20%_0%,rgba(210,170,65,0.55),rgba(210,170,65,0)_58%)] opacity-0 blur-xl transition duration-300 ease-out group-hover:opacity-70" />

@@ -112,7 +112,7 @@ export function ArchiveSection() {
                   </div>
 
                   <span className="shrink-0 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[11px] font-display font-semibold tracking-widest text-[rgba(235,205,120,0.95)] shadow-[0_10px_25px_rgba(0,0,0,0.45)] transition duration-300 ease-out group-hover:border-[rgba(210,170,65,0.35)] group-hover:bg-[rgba(210,170,65,0.95)] group-hover:text-black">
-                    Explore !
+                    Explore!
                   </span>
                 </div>
 
@@ -159,7 +159,7 @@ export function ArchiveSection() {
                               {issue.title}
                             </span>
                             <span className="shrink-0 font-display text-[11px] font-semibold tracking-widest text-[rgba(235,205,120,0.95)]">
-                              Explore !
+                              Explore!
                             </span>
                           </a>
                         ) : (
@@ -186,7 +186,7 @@ export function ArchiveSection() {
                               {issue.title}
                             </span>
                             <span className="shrink-0 font-display text-[11px] font-semibold tracking-widest text-[rgba(235,205,120,0.95)]">
-                              Explore !
+                              Explore!
                             </span>
                           </a>
                         ) : (
