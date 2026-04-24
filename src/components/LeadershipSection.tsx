@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import leadershipImg from "@/assets/leadership-team.png";
-import ourTeamImg from "@/assets/our-team.png";
+import ourTeamImg from "@/assets/our-team-new.jpg";
 import { ClickableImage } from "./ClickableImage";
 
 const fadeInUp = {
