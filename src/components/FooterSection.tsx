@@ -1,34 +1,6 @@
-import { motion } from "framer-motion";
+﻿import { motion } from "framer-motion";
 import { FaInstagram, FaLinkedin, FaFacebookF } from "react-icons/fa";
 import { SiSubstack } from "react-icons/si";
-
-const socials = [
-  {
-    name: "SUBSTACK",
-    icon: <SiSubstack className="text-xl md:text-2xl" />,
-    color: "#FF6719",
-    href: "https://substack.com/@ananddaofficial",
-  },
-  {
-    name: "INSTAGRAM",
-    icon: <FaInstagram className="text-xl md:text-2xl" />,
-    gradient: "from-pink-500 via-purple-500 to-orange-400",
-    color: "#E4405F",
-    href: "https://www.instagram.com/ananddaofficial",
-  },
-  {
-    name: "LINKEDIN",
-    icon: <FaLinkedin className="text-xl md:text-2xl" />,
-    color: "#0A66C2",
-    href: "https://www.linkedin.com/company/ananddabliss",
-  },
-  {
-    name: "FACEBOOK",
-    icon: <FaFacebookF className="text-xl md:text-2xl" />,
-    color: "#1877F2",
-    href: "#",
-  },
-];
 
 export function FooterSection() {
   return (
@@ -55,7 +27,7 @@ export function FooterSection() {
             className="group flex flex-col items-center"
           >
             <SiSubstack className="text-xl md:text-2xl text-[#FF6719] hover:scale-110 hover:drop-shadow-[0_0_8px_#FF6719] transition-all duration-300" />
-            <span className="block text-[10px] mt-2 text-[#FF6719]/60 group-hover:text-[#FF6719] transition-colors font-display tracking-[0.2em] font-bold uppercase">SUBSTACK</span>
+            <span className="block text-[10px] mt-2 text-[#FF6719]/60 group-hover:text-[#FF6719] transition-colors font-display tracking-[0.2em] font-bold uppercase text-center">SUBSTACK</span>
           </a>
 
           <a
@@ -79,6 +51,16 @@ export function FooterSection() {
           </a>
 
           <a
+            href="mailto:ananddaofficial@gmail.com"
+            className="group flex flex-col items-center"
+          >
+            <div className="text-xl md:text-2xl text-gold hover:scale-110 hover:drop-shadow-[0_0_8px_#d4af37] transition-all duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </div>
+            <span className="block text-[10px] mt-2 text-gold/60 group-hover:text-gold transition-colors font-display tracking-[0.2em] font-bold uppercase text-center">EMAIL</span>
+          </a>
+          
+          <a
             href="#"
             target="_blank"
             rel="noopener noreferrer"
@@ -92,7 +74,7 @@ export function FooterSection() {
         <div className="w-12 h-px bg-slate-200 mx-auto" />
 
         <p className="text-[9px] text-slate-400 font-display tracking-[0.4em] uppercase">
-          � 2026 Anandda. All rights reserved.
+          © 2026 Anandda. All rights reserved.
         </p>
       </div>
     </footer>
