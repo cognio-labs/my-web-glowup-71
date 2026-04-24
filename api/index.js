@@ -1,4 +1,4 @@
-const express = require("express");
+ï»¿const express = require("express");
 const cors = require("cors");
 const nodemailer = require("nodemailer");
 require("dotenv").config();
@@ -11,7 +11,7 @@ app.use(express.json());
 
 const GMAIL_USER = process.env.GMAIL_USER;
 const GMAIL_PASS = process.env.GMAIL_PASS;
-const NOTIFY_TO = process.env.NOTIFY_TO || GMAIL_USER;
+const NOTIFY_TO = process.env.NOTIFY_TO || "ananddaofficial@gmail.com";
 
 function assertEnv(res) {
   if (!GMAIL_USER || !GMAIL_PASS || !NOTIFY_TO) {
@@ -64,7 +64,7 @@ app.post("/api/contact", async (req, res) => {
   const mailOptions = {
     from: GMAIL_USER,
     to: NOTIFY_TO,
-    subject: `New Contact Form Submission — ${firstName} ${lastName}`,
+    subject: `New Contact Form Submission - ${firstName} ${lastName}`,
     text: [
       "New message from your website contact form:",
       "",
