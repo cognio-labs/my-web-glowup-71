@@ -90,6 +90,10 @@ export function ContactSection() {
           <p className="mx-auto mt-6 max-w-2xl font-serif text-xl italic text-slate-600 md:text-2xl">
             We'd love to hear from you. For collaborations, contributions, or inquiries:
           </p>
+          <div className="mt-4 flex flex-col items-center gap-2 text-gold font-display font-bold tracking-widest text-sm">
+             <a href="mailto:ananddaofficial@gmail.com" className="hover:underline">ANANDDAOFFICIAL@GMAIL.COM</a>
+             <a href="tel:+919205933455" className="hover:underline">+91 92059 33455</a>
+          </div>
         </motion.div>
 
         <motion.div
