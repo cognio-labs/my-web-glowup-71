@@ -2,8 +2,6 @@ import { motion } from "framer-motion";
 import heroBg from "@/assets/hero-bg-fixed.png";
 import logo from "@/assets/logo.png";
 
-const contactPhone = "+91 00000 00000";
-const contactPhoneHref = `tel:${contactPhone.replace(/[^\d+]/g, "")}`;
 
 const issues = [
   {
@@ -163,14 +161,6 @@ export function HeroSection() {
           </a>
         </motion.div>
 
-        <div className="mt-4 text-center text-xs font-serif italic text-white/70 md:text-sm">
-          <a
-            href={contactPhoneHref}
-            className="underline decoration-white/20 underline-offset-4 transition-colors hover:text-white"
-          >
-            Mobile: {contactPhone}
-          </a>
-        </div>
 
         {/* 6 issue buttons inside hero (instead of big boxes) */}
         <motion.div

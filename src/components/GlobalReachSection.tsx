@@ -1,4 +1,4 @@
-﻿import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 import globalImg from "@/assets/global-reach.png";
 import { ClickableImage } from "./ClickableImage";
 
@@ -76,13 +76,19 @@ export function GlobalReachSection() {
               ))}
             </ul>
           </div>
-          <ClickableImage
-            src={globalImg}
-            alt="Anandda global distribution"
-            className="rounded-2xl image-glow w-full"
-            width={800}
-            height={500}
-          />
+          <div className="overflow-hidden rounded-2xl image-glow group cursor-pointer relative">
+            <div className="relative -mb-[8%] transition-transform duration-500 group-hover:scale-[1.03]">
+              <ClickableImage
+                src={globalImg}
+                alt="Anandda global distribution"
+                className="w-full h-auto"
+                width={800}
+                height={500}
+              />
+            </div>
+            {/* Gradient overlay to further soften the bottom edge */}
+            <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-[#1b0f2a] to-transparent pointer-events-none" />
+          </div>
         </motion.div>
       </div>
     </section>
