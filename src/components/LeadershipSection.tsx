@@ -11,19 +11,21 @@ type TeamMember = {
   name: string;
   role: string;
   subtitle?: string;
+  image?: string;
+  labelColor: 'yellow' | 'teal';
 };
 
 const teamMembers: TeamMember[] = [
-  { name: "S. Sharma", role: "Chief Legal Officer" },
-  { name: "Sheena Mendiratta", role: "Curator of", subtitle: "Inspired Expression" },
-  { name: "R. R. Gupta", role: "Chief Legal Officer" },
-  { name: "Manu Puri", role: "AI & L&D Strategist" },
-  { name: "Chandna Dixit", role: "Executive Editor", subtitle: "Inner Horizons" },
-  { name: "Pratishtha Bhardwaj", role: "Advisor — Pathways", subtitle: "& Presence" },
-  { name: "Shalini Gaur", role: "Head — Global", subtitle: "Collaborations & Impact" },
-  { name: "Harit Gulia", role: "Visual & Art Alchemist" },
-  { name: "Nitya Upadhyay", role: "Editor-in-Soul" },
-  { name: "Ashutosh", role: "Custodian of", subtitle: "Digital Pathways" },
+  { name: "S. Sharma", role: "Chief Legal Officer", labelColor: 'yellow' },
+  { name: "Sheena Mendiratta", role: "Curator of", subtitle: "Inspired Expression", labelColor: 'teal' },
+  { name: "R. R. Gupta", role: "Chief Legal Officer", labelColor: 'yellow' },
+  { name: "Manu Puri", role: "AI & L&D Strategist", labelColor: 'teal' },
+  { name: "Chandna Dixit", role: "Executive Editor", subtitle: "Inner Horizons", labelColor: 'yellow' },
+  { name: "Pratishtha Bhardwaj", role: "Advisor — Pathways", subtitle: "& Presence", labelColor: 'teal' },
+  { name: "Karuna Mishra", role: "Spiritual Features", subtitle: "Editor", labelColor: 'yellow' },
+  { name: "Harit Gulia", role: "Visual & Art Alchemist", labelColor: 'teal' },
+  { name: "Nitya Upadhyay", role: "Editor-in-Soul", labelColor: 'yellow' },
+  { name: "Ashutosh", role: "Custodian of", subtitle: "Digital Pathways", labelColor: 'teal' },
 ];
 
 function getInitials(name: string) {
@@ -81,49 +83,69 @@ export function LeadershipSection() {
             viewport={{ once: true }}
             variants={fadeInUp}
           >
-            <div className="rounded-2xl image-glow overflow-hidden border border-white/10 bg-[linear-gradient(180deg,#2b0b46_0%,#3b1261_55%,#2b0b46_100%)] p-6 md:p-10">
-              <div className="text-center">
-                <p className="font-serif italic text-white/80 text-lg md:text-xl">Meet</p>
-                <h3 className="mt-1 font-[var(--font-family-display)] tracking-[0.2em] text-white text-3xl md:text-5xl font-bold">
-                  OUR TEAM
+            <div className="rounded-2xl image-glow overflow-hidden border border-white/10 bg-[#1b0f2a] p-6 md:p-10">
+              <div className="text-center mb-10">
+                <h3 className="flex flex-col items-center justify-center">
+                  <span className="font-serif italic text-white/90 text-3xl md:text-5xl mb-2" style={{ fontFamily: "'Cormorant Garamond', serif" }}>Meet</span>
+                  <span className="font-[var(--font-family-display)] tracking-widest text-white text-4xl md:text-6xl font-bold uppercase">
+                    OUR TEAM
+                  </span>
                 </h3>
-                <div className="gold-divider w-24 mx-auto mt-4 opacity-80" />
               </div>
 
-              <ul className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-6">
+              <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-x-6 md:gap-y-10">
                 {teamMembers.map((member) => (
                   <motion.li
                     key={member.name}
-                    initial={{ opacity: 0, y: 16 }}
+                    initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
+                    whileHover={{ y: -8, transition: { duration: 0.3 } }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.45 }}
-                    className="rounded-2xl bg-white/95 text-[#1b0f2a] border border-white/60 shadow-[0_12px_40px_rgba(0,0,0,0.18)] overflow-hidden"
+                    transition={{ duration: 0.5 }}
+                    className="flex flex-col group cursor-pointer"
                   >
-                    <div className="p-5">
-                      <div className="mx-auto h-20 w-20 rounded-full bg-[radial-gradient(circle_at_30%_30%,#f7e695_0%,#b58d3c_55%,#7a5a14_100%)] flex items-center justify-center text-white font-[var(--font-family-display)] tracking-widest text-xl shadow-[0_10px_26px_rgba(0,0,0,0.25)]">
-                        {getInitials(member.name)}
+                    <div className="relative bg-[#fcf9f2] rounded-t-3xl pt-6 px-4 pb-2 flex-grow shadow-lg border border-white/20 transition-shadow duration-300 group-hover:shadow-2xl">
+                      {/* Photo Area */}
+                      <div className="aspect-[4/5] w-full rounded-2xl bg-gray-200 overflow-hidden relative shadow-inner">
+                        {member.image ? (
+                          <img src={member.image} alt={member.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                        ) : (
+                          <div className="w-full h-full bg-[radial-gradient(circle_at_center,#e5e7eb_0%,#d1d5db_100%)] flex items-center justify-center text-gray-400">
+                             {/* Initials as fallback */}
+                             <span className="text-4xl font-bold opacity-30 group-hover:scale-110 transition-transform duration-500">{getInitials(member.name)}</span>
+                          </div>
+                        )}
+                        
+                        {/* Role Label Overlay */}
+                        <div className={`absolute -bottom-1 left-1/2 -translate-x-1/2 w-[90%] py-1.5 px-2 rounded-xl text-center shadow-md z-10 transition-transform duration-300 group-hover:scale-105 ${
+                          member.labelColor === 'yellow' 
+                            ? 'bg-[#eebc1d] text-[#1b0f2a]' 
+                            : 'bg-[#0d5c6b] text-white'
+                        }`}>
+                          <p className="text-[10px] md:text-[11px] font-bold uppercase tracking-tight leading-tight">
+                            {member.role}
+                          </p>
+                          {member.subtitle && (
+                            <p className={`text-[8px] md:text-[9px] leading-tight ${member.labelColor === 'yellow' ? 'text-[#1b0f2a]/80' : 'text-white/80'}`}>
+                              {member.subtitle}
+                            </p>
+                          )}
+                        </div>
                       </div>
 
-                      <div className="mt-4 text-center">
-                        <p className="font-[var(--font-family-display)] text-sm md:text-base font-semibold tracking-wide">
+                      {/* Name below photo */}
+                      <div className="mt-7 mb-2 text-center">
+                        <p className="font-[var(--font-family-display)] text-xs md:text-sm font-bold tracking-widest text-[#1b0f2a] uppercase transition-colors duration-300 group-hover:text-gold">
                           {member.name}
                         </p>
-
-                        <div className="mt-3 inline-flex flex-col items-center gap-1 rounded-full bg-[#0d5c6b] px-4 py-2 text-white">
-                          <span className="text-sm font-semibold leading-tight">{member.role}</span>
-                          {member.subtitle ? (
-                            <span className="text-xs text-white/85 leading-tight">{member.subtitle}</span>
-                          ) : null}
-                        </div>
                       </div>
                     </div>
                   </motion.li>
                 ))}
               </ul>
 
-              <p className="mt-6 text-center text-white/70 text-sm font-serif italic">
-                Want individual photos on each card? Add them and I’ll wire them in.
+              <p className="mt-12 text-center text-white/50 text-xs font-serif italic">
+                Replace placeholders with actual team member portraits for the full premium experience.
               </p>
             </div>
           </motion.div>
