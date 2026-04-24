@@ -121,7 +121,7 @@ export function Navbar() {
             <img
               src={logo}
               alt="Anandda logo"
-              className="h-12 w-12 rounded-full border border-gold/30 object-cover mr-3 inline-block shadow-md"
+              className="h-12 w-12 rounded-full object-cover mr-3 inline-block shadow-md"
             />
             <span className="logo-text">ANAND<span className="italic">D</span>A</span>
           </button>
