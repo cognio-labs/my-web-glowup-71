@@ -103,7 +103,7 @@ export function HeroSection() {
           <img
             src={logo}
             alt="Anandda logo"
-            className="mb-4 h-24 w-24 rounded-full object-cover shadow-2xl md:mb-8 md:h-48 md:w-48"
+            className="mb-4 h-32 w-32 rounded-full object-cover shadow-2xl md:mb-8 md:h-64 md:w-64"
           />
           <h1 className="font-display mb-2 bg-gradient-to-b from-white via-gold-light to-gold bg-clip-text text-4xl font-bold tracking-widest text-transparent drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)] filter brightness-110 md:mb-4 md:text-8xl">
             ANAND<span className="italic">D</span>A
