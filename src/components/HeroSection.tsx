@@ -5,6 +5,11 @@ import logo from "@/assets/logo.png";
 
 const issues = [
   {
+    title: "May 2026",
+    tagline: "Inner Ecology: Real Lives, Real Passions, Real Journeys",
+    url: "https://heyzine.com/flip-book/5aa03a21af.html",
+  },
+  {
     title: "April 2026",
     tagline: "Water: The Source of Life & Rejuvenation",
     url: "https://heyzine.com/flip-book/f03b5c07d2.html",
@@ -130,7 +135,7 @@ export function HeroSection() {
           className="mt-8 flex flex-col justify-center gap-3 sm:flex-row md:mt-10 md:gap-4"
         >
           <a
-            href="https://heyzine.com/flip-book/f03b5c07d2.html"
+            href="https://heyzine.com/flip-book/5aa03a21af.html"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-gold px-8 py-3.5 text-xs shadow-2xl hover:shadow-gold/30 md:px-10 md:py-4 md:text-sm"

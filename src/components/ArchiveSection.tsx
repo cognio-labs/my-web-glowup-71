@@ -4,6 +4,7 @@ type Issue = { title: string; url: string };
 
 // Keep adding issues here — the page automatically renders a 6+6 index list.
 const issues: Issue[] = [
+  { title: "May 2026", url: "https://heyzine.com/flip-book/5aa03a21af.html" },
   { title: "April 2026", url: "https://heyzine.com/flip-book/f03b5c07d2.html" },
   { title: "March 2026", url: "https://heyzine.com/flip-book/cedec35c24.html" },
   { title: "February 2026", url: "https://heyzine.com/flip-book/02634fdaa6.html" },
