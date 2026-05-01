@@ -11,7 +11,7 @@ app.use(express.json());
 
 const GMAIL_USER = process.env.GMAIL_USER;
 const GMAIL_PASS = process.env.GMAIL_PASS;
-const NOTIFY_TO = process.env.NOTIFY_TO || "ananddaofficial@gmail.com";
+const NOTIFY_TO = process.env.NOTIFY_TO || GMAIL_USER || "ananddaofficial@gmail.com";
 
 function assertEnv(res) {
   if (!GMAIL_USER || !GMAIL_PASS || !NOTIFY_TO) {
@@ -25,15 +25,24 @@ function assertEnv(res) {
   return true;
 }
 
-// Transporter configuration for Gmail
-// For Gmail, you'll need an 'App Password' if 2FA is enabled.
-const transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: GMAIL_USER,
-    pass: GMAIL_PASS,
-  },
-});
+function createTransporter() {
+  return nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: GMAIL_USER,
+      pass: GMAIL_PASS,
+    },
+  });
+}
+
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
 
 // Status Route
 app.get("/api/status", (req, res) => {
@@ -48,7 +57,11 @@ app.get("/api/status", (req, res) => {
 
 // Contact Form Endpoint
 app.post("/api/contact", async (req, res) => {
-  const { firstName, lastName, email, phone, message } = req.body || {};
+  const firstName = String(req.body?.firstName || "").trim();
+  const lastName = String(req.body?.lastName || "").trim();
+  const email = String(req.body?.email || "").trim();
+  const phone = String(req.body?.phone || "").trim();
+  const message = String(req.body?.message || "").trim();
 
   if (!firstName || !lastName || !email || !phone || !message) {
     return res.status(400).json({
@@ -77,15 +90,16 @@ app.post("/api/contact", async (req, res) => {
     ].join("\n"),
     html: `
       <h3>New Contact Form Submission</h3>
-      <p><strong>Name:</strong> ${firstName} ${lastName}</p>
-      <p><strong>Email:</strong> ${email}</p>
-      <p><strong>Phone:</strong> ${phone}</p>
+      <p><strong>Name:</strong> ${escapeHtml(firstName)} ${escapeHtml(lastName)}</p>
+      <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+      <p><strong>Phone:</strong> ${escapeHtml(phone)}</p>
       <p><strong>Message:</strong></p>
-      <p>${String(message).replace(/\n/g, "<br/>")}</p>
+      <p>${escapeHtml(message).replace(/\n/g, "<br/>")}</p>
     `,
   };
 
   try {
+    const transporter = createTransporter();
     await transporter.sendMail(mailOptions);
     console.log("\x1b[32m[Success]\x1b[0m Email sent.");
     return res.status(200).json({
