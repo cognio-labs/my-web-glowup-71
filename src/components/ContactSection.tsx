@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { Check, Send } from "lucide-react";
+import { Send } from "lucide-react";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
